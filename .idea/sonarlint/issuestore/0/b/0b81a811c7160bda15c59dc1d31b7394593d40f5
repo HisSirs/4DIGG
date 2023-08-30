@@ -1,0 +1,30 @@
+
+ƒpython:S1845¯"eRename field "window_" to prevent any misunderstanding/clash with field "Window_" defined on line 174(ÆÛ·Éûÿÿÿÿ
+}python:S1845 "dRename method "window" to prevent any misunderstanding/clash with field "Window" defined on line 173(èßøÇ
+}python:S1845“"dRename method "exists" to prevent any misunderstanding/clash with field "Exists" defined on line 168(äĞğ
+~python:S1845ò"`Rename method "wait" to prevent any misunderstanding/clash with field "Wait" defined on line 169(æñ¥Æùÿÿÿÿ
+jpython:S1134¸"LTake the required action to fix the issue indicated by this "FIXME" comment.(†ì–Ãøÿÿÿÿ
+jpython:S1134ù"LTake the required action to fix the issue indicated by this "FIXME" comment.(†ì–Ãøÿÿÿÿ
+epython:S1134‚"LTake the required action to fix the issue indicated by this "FIXME" comment.(˜²Ïğ
+7python:S125Î"Remove this commented out code.(¿¬âö
+lpython:S1854É"SRemove this assignment to local variable 'ctrls_to_print'; the value is never used.(ßÇÀÍ
+Rpython:S1135Ä"4Complete the task associated to this "TODO" comment.(Ç¾Åùÿÿÿÿ
+7python:S125ò"Remove this commented out code.(Œæ„¨
+<python:S125û"Remove this commented out code.(‘Ïãûÿÿÿÿ
+7python:S125"Remove this commented out code.(áŠÉÙ
+7python:S125ˆ"Remove this commented out code.(Ëµì
+7python:S125•"Remove this commented out code.(›ğ“¼
+<python:S125Ÿ"Remove this commented out code.(½›‡“şÿÿÿÿ
+<python:S125Á"Remove this commented out code.(‚Ùñÿÿÿÿÿ
+7python:S125ë"Remove this commented out code.(Æ’î¦
+7python:S125í"Remove this commented out code.(–†îí
+€python:S1845•"gRename field "windows_" to prevent any misunderstanding/clash with field "Windows_" defined on line 916(Áÿú
+„python:S1845¤"fRename method "connect" to prevent any misunderstanding/clash with field "Connect" defined on line 911(°·Àúÿÿÿÿ
+{python:S1845ö"bRename method "start" to prevent any misunderstanding/clash with field "Start" defined on line 910(é¬ìô
+„python:S1845Ò	"fRename field "Window_" to prevent any misunderstanding/clash with field "window_" defined on line 1234(ä¥Æàşÿÿÿÿ
+zpython:S1845«
+"bRename field "Kill_" to prevent any misunderstanding/clash with field "kill_" defined on line 1322(ñÅÆ)
+|python:S117Ş"_Rename this local variable "KernelTime_end" to match the regular expression ^[_a-z][a-z0-9_]*$.(Í¯Èùÿÿÿÿ
+ypython:S117Ù"aRename this local variable "KernelTime_start" to match the regular expression ^[_a-z][a-z0-9_]*$.(ãßÏ
+zpython:S117Ş"]Rename this local variable "UserTime_end" to match the regular expression ^[_a-z][a-z0-9_]*$.(Í¯Èùÿÿÿÿ
+wpython:S117Ù"_Rename this local variable "UserTime_start" to match the regular expression ^[_a-z][a-z0-9_]*$.(ãßÏ

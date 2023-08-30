@@ -1,0 +1,104 @@
+
+Lpython:S1135"4Complete the task associated to this "TODO" comment.(²Õˆ
+xpython:S117¢"[Rename this parameter "wrappedFunction" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡Æ†úÿÿÿÿ
+7python:S125é"Remove this commented out code.(ºŸÈç
+Mpython:S1135•"4Complete the task associated to this "TODO" comment.(ÿÌşå
+Mpython:S1135ˆ"4Complete the task associated to this "TODO" comment.(Õ¤
+6python:S125™"Remove this commented out code.(¤µX
+Rpython:S1135¤"4Complete the task associated to this "TODO" comment.(ÎÔ™×úÿÿÿÿ
+Rpython:S1135®"4Complete the task associated to this "TODO" comment.(¤ÌúÄıÿÿÿÿ
+Mpython:S1135¶"4Complete the task associated to this "TODO" comment.(§å¾©
+Mpython:S1135Ã"4Complete the task associated to this "TODO" comment.(íÖ’™
+spython:S117É"[Rename this parameter "wrappedFunction" to match the regular expression ^[_a-z][a-z0-9_]*$.(ßË–µ
+qpython:S117Ò"ZRename this local variable "returnVal" to match the regular expression ^[_a-z][a-z0-9_]*$.(ì‘j
+qpython:S117‚"TRename this parameter "firstArg" to match the regular expression ^[_a-z][a-z0-9_]*$.(¹¡–Ôıÿÿÿÿ
+rpython:S117‚"URename this parameter "secondArg" to match the regular expression ^[_a-z][a-z0-9_]*$.(¹¡–Ôıÿÿÿÿ
+lpython:S117Â"TRename this parameter "funcArgs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó¤èÑ
+lpython:S117Â"TRename this parameter "funcName" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó¤èÑ
+qpython:S117Â"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó¤èÑ
+Mpython:S1135Î"4Complete the task associated to this "TODO" comment.(‚îõ‰
+Mpython:S1135Ï"4Complete the task associated to this "TODO" comment.(²ÚÍû
+Rpython:S1135à"4Complete the task associated to this "TODO" comment.(«¤’Ğşÿÿÿÿ
+qpython:S117ó"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(Óï’
+qpython:S117”"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜•Â–
+vpython:S117¶"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(î¢£ëûÿÿÿÿ
+>python:S1481á"%Remove the unused local variable "i".(œíÿ…
+Rpython:S1135×"4Complete the task associated to this "TODO" comment.(Ö‚Îùÿÿÿÿ
+vpython:S117ï"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(íùÅ›ÿÿÿÿÿ
+Mpython:S1135ˆ"4Complete the task associated to this "TODO" comment.(ó˜•
+qpython:S117"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(§öíÕ
+qpython:S117©"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(«î¾
+vpython:S117Â"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ëñ‰™şÿÿÿÿ
+qpython:S117í"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(æßïÿ
+vpython:S117—	"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÀÀÊüıÿÿÿÿ
+vpython:S117µ	"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(¢­ï‚ıÿÿÿÿ
+qpython:S117Ñ	"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(èÓ¼Õ
+qpython:S117í	"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜³‰Ä
+ppython:S117Œ
+"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(âŸ€;
+jpython:S117Œ
+"SRename this parameter "xOffset" to match the regular expression ^[_a-z][a-z0-9_]*$.(âŸ€;
+jpython:S117Œ
+"SRename this parameter "yOffset" to match the regular expression ^[_a-z][a-z0-9_]*$.(âŸ€;
+vpython:S117®
+"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(ê¢²—øÿÿÿÿ
+tpython:S117®
+"WRename this parameter "mouseDownUp" to match the regular expression ^[_a-z][a-z0-9_]*$.(ê¢²—øÿÿÿÿ
+vpython:S117×
+"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªï²ùşÿÿÿÿ
+tpython:S117×
+"WRename this parameter "mouseDownUp" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªï²ùşÿÿÿÿ
+ppython:S117×
+"SRename this parameter "xOffset" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªï²ùşÿÿÿÿ
+ppython:S117×
+"SRename this parameter "yOffset" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªï²ùşÿÿÿÿ
+npython:S117‰"VRename this parameter "moveOrDrag" to match the regular expression ^[_a-z][a-z0-9_]*$.(€Ë“
+opython:S117Ô"WRename this local variable "tweenX" to match the regular expression ^[_a-z][a-z0-9_]*$.(ª­‡Ñ
+opython:S117Ô"WRename this local variable "tweenY" to match the regular expression ^[_a-z][a-z0-9_]*$.(ª­‡Ñ
+kpython:S117‰"SRename this parameter "xOffset" to match the regular expression ^[_a-z][a-z0-9_]*$.(€Ë“
+kpython:S117‰"SRename this parameter "yOffset" to match the regular expression ^[_a-z][a-z0-9_]*$.(€Ë“
+vpython:S117†"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(¿ö¾¢ÿÿÿÿÿ
+vpython:S117œ"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(¬ß¡øÿÿÿÿ
+vpython:S117®"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰Ñ¸Îøÿÿÿÿ
+wpython:S117Â"ZRename this local variable "lowerKeys" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÍÊÖ˜øÿÿÿÿ
+Cpython:S1481Ë"%Remove the unused local variable "i".(ŒéÌœüÿÿÿÿ
+vpython:S117Õ"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÿ·ü¡úÿÿÿÿ
+wpython:S117æ"ZRename this local variable "lowerKeys" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÍÊÖ˜øÿÿÿÿ
+qpython:S117ú"YRename this parameter "logScreenshot" to match the regular expression ^[_a-z][a-z0-9_]*$.(ã°–¬
+Mpython:S1135"4Complete the task associated to this "TODO" comment.(ÑşÙ¶
+Mpython:S1135®"4Complete the task associated to this "TODO" comment.(ô°²Ä
+xpython:S117İ"[Rename this local variable "pixelColor" to match the regular expression ^[_a-z][a-z0-9_]*$.(ˆ áıúÿÿÿÿ
+ypython:S117Ú"\Rename this local variable "positionStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ú§“²şÿÿÿÿ
+ypython:S117Ï"\Rename this local variable "runningIDLE" to match the regular expression ^[_a-z][a-z0-9_]*$.(æ§…üıÿÿÿÿ
+ppython:S117Ë"SRename this parameter "xOffset" to match the regular expression ^[_a-z][a-z0-9_]*$.(Å‹ç©ûÿÿÿÿ
+ppython:S117Ë"SRename this parameter "yOffset" to match the regular expression ^[_a-z][a-z0-9_]*$.(Å‹ç©ûÿÿÿÿ
+Ipython:S1481ù"+Replace unused local variable "x" with "_".(‹´ÚÀùÿÿÿÿ
+Ipython:S1481ù"+Replace unused local variable "y" with "_".(‹´ÚÀùÿÿÿÿ
+Rpython:S1135ô"4Complete the task associated to this "TODO" comment.(è¿Ç‚øÿÿÿÿ
+[python:S112ö">Replace this generic exception class with a more specific one.(Ñõ”áúÿÿÿÿ
+spython:S117˜"VRename this parameter "commandStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(Æ½ÜĞùÿÿÿÿ
+Npython:S6035£"0Replace this alternation with a character class.(—ëƒ®ÿÿÿÿÿ
+npython:S117«"VRename this parameter "commandStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(ïëÎÚ
+mpython:S117¼"VRename this parameter "commandStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(åËËy
+xpython:S117Ï"`Rename this local variable "openParensCount" to match the regular expression ^[_a-z][a-z0-9_]*$.(Û¢áÉ
+npython:S117á"VRename this parameter "commandStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(½î£
+tpython:S117ø"\Rename this local variable "commandList" to match the regular expression ^[_a-z][a-z0-9_]*$.(óæ¨·
+|python:S117õ"_Rename this local variable "commandPattern" to match the regular expression ^[_a-z][a-z0-9_]*$.(°À¬ùÿÿÿÿ
+spython:S117ñ"VRename this parameter "commandStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ú ×¢ûÿÿÿÿ
+qpython:S117"YRename this local variable "indexNum" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ã‚é
+wpython:S117›"ZRename this local variable "indexPart" to match the regular expression ^[_a-z][a-z0-9_]*$.(Çîä”ÿÿÿÿÿ
+python:S117„"bRename this local variable "individualCommand" to match the regular expression ^[_a-z][a-z0-9_]*$.(©ì™õıÿÿÿÿ
+ypython:S117"\Rename this local variable "newIndexNum" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªôÀÚüÿÿÿÿ
+{python:S117Õ"^Rename this local variable "numberOfLoops" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÓÆØ˜ùÿÿÿÿ
+zpython:S117Ä"]Rename this local variable "quotedString" to match the regular expression ^[_a-z][a-z0-9_]*$.(éĞ²Óûÿÿÿÿ
+{python:S117Ø"^Rename this local variable "subCommandStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÛßÜışÿÿÿÿ
+Mpython:S1481›"/Replace unused local variable "colon" with "_".(Çîä”ÿÿÿÿÿ
+Rpython:S1135³"4Complete the task associated to this "TODO" comment.(›¨ã¾üÿÿÿÿ
+qpython:S117ï"TRename this parameter "_ssCount" to match the regular expression ^[_a-z][a-z0-9_]*$.(ñÎ¸”şÿÿÿÿ
+tpython:S117ï"WRename this parameter "commandList" to match the regular expression ^[_a-z][a-z0-9_]*$.(ñÎ¸”şÿÿÿÿ
+Cpython:S1481£"%Remove the unused local variable "j".(—Û¢¶ùÿÿÿÿ
+lpython:S117©"TRename this parameter "_ssCount" to match the regular expression ^[_a-z][a-z0-9_]*$.(Œƒ¶õ
+ypython:S117Ş"\Rename this local variable "commandList" to match the regular expression ^[_a-z][a-z0-9_]*$.(ôéùÿÿÿÿ
+npython:S117©"VRename this parameter "commandStr" to match the regular expression ^[_a-z][a-z0-9_]*$.(Œƒ¶õ
+{python:S117á"^Rename this local variable "originalPAUSE" to match the regular expression ^[_a-z][a-z0-9_]*$.(ôÿ £øÿÿÿÿ
+mpython:S117æ"URename this parameter "dontPrint" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡¤Î

@@ -1,0 +1,7 @@
+
+Hpython:S1066è"/Merge this if statement with the enclosing one.(íÆüÁ
+>python:S1481æ"%Remove the unused local variable "i".(éŠ‰£
+Spython:S2836ò"5Add a "break" statement or remove this "else" clause.(³£œ‰øÿÿÿÿ
+>python:S1481ƒ"%Remove the unused local variable "i".(éŠ‰£
+Dpython:S5806œ"+Rename this variable; it shadows a builtin.(Õò­°
+Mpython:S1135ù"4Complete the task associated to this "TODO" comment.(œÛù„

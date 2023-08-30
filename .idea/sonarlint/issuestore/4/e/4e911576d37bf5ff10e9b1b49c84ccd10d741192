@@ -1,0 +1,43 @@
+
+;python:S125&"Remove this commented out code.(ˆÛ¥ğüÿÿÿÿ
+€python:S1845ë"bRename field "Style" to prevent any misunderstanding/clash with method "style" defined on line 223(ú“åàûÿÿÿÿ
+python:S1845ú"fRename field "ExStyle" to prevent any misunderstanding/clash with method "exstyle" defined on line 238(‰…¦ö
+ypython:S1845á"`Rename field "Font" to prevent any misunderstanding/clash with method "font" defined on line 341(†æ
+{python:S1845"bRename field "Fonts" to prevent any misunderstanding/clash with method "fonts" defined on line 397(¨–›¾
+€python:S1845ó"bRename field "Click" to prevent any misunderstanding/clash with method "click" defined on line 737(¢–ƒ‚ùÿÿÿÿ
+€python:S1845Î"bRename field "Owner" to prevent any misunderstanding/clash with method "owner" defined on line 963(š¡³ûÿÿÿÿ
+~python:S1845ì"`Rename field "Menu" to prevent any misunderstanding/clash with method "menu" defined on line 997(×Îšóûÿÿÿÿ
+|python:S1845Ÿ	"cRename field "Close" to prevent any misunderstanding/clash with method "close" defined on line 1149(Ïçü±
+‚python:S1845¨	"iRename field "Maximize" to prevent any misunderstanding/clash with method "maximize" defined on line 1186(‚¬èí
+‚python:S1845²	"iRename field "Minimize" to prevent any misunderstanding/clash with method "minimize" defined on line 1195(øëÂœ
+€python:S1845»	"gRename field "Restore" to prevent any misunderstanding/clash with method "restore" defined on line 1205(•Ÿ±‹
+ƒpython:S1845”"eRename field "Scroll" to prevent any misunderstanding/clash with method "scroll" defined on line 1393(ÖÍÁïÿÿÿÿÿ
+‚python:S1845®"iRename field "Rectangle" to prevent any misunderstanding/clash with field "rectangle" defined on line 914(ÍÅİ›
+python:S1845²"cRename field "Parent" to prevent any misunderstanding/clash with field "parent" defined on line 719(’©©¢ÿÿÿÿÿ
+†python:S1845µ"hRename field "Children" to prevent any misunderstanding/clash with field "children" defined on line 1433(‰ÀèÌùÿÿÿÿ
+7python:S125Ä"Remove this commented out code.(æ“„Ÿ
+Fpython:S1940ô"-Use the opposite operator ("not in") instead.(òû÷Ã
+rpython:S117 "URename this parameter "commandID" to match the regular expression ^[_a-z][a-z0-9_]*$.(ğ§¡àùÿÿÿÿ
+lpython:S117¦"URename this parameter "commandID" to match the regular expression ^[_a-z][a-z0-9_]*$.(’›å
+7python:S125«"Remove this commented out code.(æ“„Ÿ
+xpython:S117Ø"[Rename this local variable "CArgObject" to match the regular expression ^[_a-z][a-z0-9_]*$.(†§üÿÿÿÿ
+{python:S117Ô"^Rename this local variable "lParamAddress" to match the regular expression ^[_a-z][a-z0-9_]*$.(¢¨ß¸ùÿÿÿÿ
+vpython:S117Ñ"^Rename this local variable "wParamAddress" to match the regular expression ^[_a-z][a-z0-9_]*$.(™ÄäÊ
+<python:S125Ÿ"Remove this commented out code.(Şîİÿÿÿÿÿ
+mpython:S117Ê"URename this parameter "controlID" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÕÓò
+7python:S125¾"Remove this commented out code.(˜ıİÊ
+7python:S125È"Remove this commented out code.(˜ıİÊ
+<python:S125”"Remove this commented out code.(ÊË¬ûÿÿÿÿ
+Mpython:S1135¬"4Complete the task associated to this "TODO" comment.(¤´ˆ¹
+npython:S117Ü"VRename this local variable "hMenu" to match the regular expression ^[_a-z][a-z0-9_]*$.(İÕÌª
+npython:S117ç"VRename this local variable "hMenu" to match the regular expression ^[_a-z][a-z0-9_]*$.(ø€áê
+<python:S125‘"Remove this commented out code.(õÊïûüÿÿÿÿ
+7python:S125•"Remove this commented out code.(”†¥‡
+Rpython:S1135®	"4Complete the task associated to this "TODO" comment.(Œ»¥Úüÿÿÿÿ
+spython:S117ò	"[Rename this local variable "hwndActive" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ü¬
+<python:S125Í"Remove this commented out code.(œßƒÖûÿÿÿÿ
+Jpython:S1481ê"1Remove the unused local variable "matched_flags".(‰Ğ™Ë
+Rpython:S1135í"4Complete the task associated to this "TODO" comment.(À‚€ùøÿÿÿÿ
+Mpython:S1135À"4Complete the task associated to this "TODO" comment.(¾Öë
+<python:S125Å"Remove this commented out code.(ñë“Óşÿÿÿÿ
+Mpython:S1135Ï"4Complete the task associated to this "TODO" comment.(¾Öë

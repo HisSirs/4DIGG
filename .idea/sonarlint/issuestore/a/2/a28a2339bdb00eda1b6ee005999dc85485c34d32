@@ -1,0 +1,64 @@
+
+Qpython:S1135)"4Complete the task associated to this "TODO" comment.(Œ¼üÕûÿÿÿÿ
+kpython:S117`"TRename this local variable "hDC" to match the regular expression ^[_a-z][a-z0-9_]*$.(‰À—³
+gpython:S117U"PRename this parameter "hWnd" to match the regular expression ^[_a-z][a-z0-9_]*$.(øñşï
+rpython:S117‚"[Rename this parameter "wrappedFunction" to match the regular expression ^[_a-z][a-z0-9_]*$.(’•şr
+vpython:S117½"YRename this parameter "haystackImage" to match the regular expression ^[_a-z][a-z0-9_]*$.(´ëôøÿÿÿÿ
+zpython:S117Î"]Rename this local variable "needleHeight" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŸÔ¡Šıÿÿÿÿ
+tpython:S117½"WRename this parameter "needleImage" to match the regular expression ^[_a-z][a-z0-9_]*$.(´ëôøÿÿÿÿ
+ypython:S117Î"\Rename this local variable "needleWidth" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŸÔ¡Šıÿÿÿÿ
+vpython:S117´"^Rename this local variable "firstFindFunc" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÖÕ­è
+xpython:S117¼"[Rename this local variable "foundMatch" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ’–üÿÿÿÿ
+xpython:S117ƒ"`Rename this local variable "haystackFileObj" to match the regular expression ^[_a-z][a-z0-9_]*$.(µñÉº
+|python:S117š"_Rename this local variable "haystackHeight" to match the regular expression ^[_a-z][a-z0-9_]*$.(×ÎûŸúÿÿÿÿ
+vpython:S117ò"YRename this parameter "haystackImage" to match the regular expression ^[_a-z][a-z0-9_]*$.(»£³Ôÿÿÿÿÿ
+zpython:S117"bRename this local variable "haystackImageData" to match the regular expression ^[_a-z][a-z0-9_]*$.(Üı–
+{python:S117¾"^Rename this local variable "haystackStart" to match the regular expression ^[_a-z][a-z0-9_]*$.(ï‹åˆşÿÿÿÿ
+{python:S117š"^Rename this local variable "haystackWidth" to match the regular expression ^[_a-z][a-z0-9_]*$.(×ÎûŸúÿÿÿÿ
+vpython:S117ı"^Rename this local variable "needleFileObj" to match the regular expression ^[_a-z][a-z0-9_]*$.(¬ÍÛ„
+upython:S117™"]Rename this local variable "needleHeight" to match the regular expression ^[_a-z][a-z0-9_]*$.(àúÌ×
+tpython:S117ò"WRename this parameter "needleImage" to match the regular expression ^[_a-z][a-z0-9_]*$.(»£³Ôÿÿÿÿÿ
+xpython:S117œ"`Rename this local variable "needleImageData" to match the regular expression ^[_a-z][a-z0-9_]*$.(Èû“Ê
+python:S117¢"dRename this local variable "needleImageFirstRow" to match the regular expression ^[_a-z][a-z0-9_]*$.(³×ı”şÿÿÿÿ
+}python:S117Ÿ"`Rename this local variable "needleImageRows" to match the regular expression ^[_a-z][a-z0-9_]*$.(˜Ğèôÿÿÿÿÿ
+tpython:S117™"\Rename this local variable "needleWidth" to match the regular expression ^[_a-z][a-z0-9_]*$.(àúÌ×
+xpython:S117«"`Rename this local variable "numMatchesFound" to match the regular expression ^[_a-z][a-z0-9_]*$.(úû¨½
+jpython:S1226ò"LIntroduce a new variable or use its initial value before reassigning 'step'.(»£³Ôÿÿÿÿÿ
+qpython:S117Ş"YRename this parameter "haystackImage" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªŒ‹Ë
+opython:S117Ş"WRename this parameter "needleImage" to match the regular expression ^[_a-z][a-z0-9_]*$.(ªŒ‹Ë
+qpython:S117î"YRename this parameter "minSearchTime" to match the regular expression ^[_a-z][a-z0-9_]*$.(èÕ¢ã
+tpython:S117ú"WRename this local variable "retVal" to match the regular expression ^[_a-z][a-z0-9_]*$.(ıŞ¹Óıÿÿÿÿ
+zpython:S117÷"]Rename this local variable "screenshotIm" to match the regular expression ^[_a-z][a-z0-9_]*$.(÷úüÿÿÿÿ
+tpython:S117•"WRename this local variable "retVal" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸ÈÒñÿÿÿÿÿ
+zpython:S117’"]Rename this local variable "screenshotIm" to match the regular expression ^[_a-z][a-z0-9_]*$.(÷úüÿÿÿÿ
+Mpython:S1135‘"4Complete the task associated to this "TODO" comment.(È¦“
+tpython:S117¸"\Rename this local variable "foundMatchX" to match the regular expression ^[_a-z][a-z0-9_]*$.(Œ£äã
+tpython:S117¸"\Rename this local variable "foundMatchY" to match the regular expression ^[_a-z][a-z0-9_]*$.(Œ£äã
+wpython:S117·"`Rename this local variable "foundMatchesBox" to match the regular expression ^[_a-z][a-z0-9_]*$.(İ‚›m
+zpython:S117°"bRename this local variable "foundMatchesBoxes" to match the regular expression ^[_a-z][a-z0-9_]*$.(»¢öÚ
+ƒpython:S117´"fRename this local variable "shortestDistanceIndex" to match the regular expression ^[_a-z][a-z0-9_]*$.(ä»«´ıÿÿÿÿ
+wpython:S117¹"ZRename this local variable "xDistance" to match the regular expression ^[_a-z][a-z0-9_]*$.(€Ÿò÷ûÿÿÿÿ
+wpython:S117º"ZRename this local variable "yDistance" to match the regular expression ^[_a-z][a-z0-9_]*$.(úüñ²ûÿÿÿÿ
+xpython:S117Ô"`Rename this local variable "matchingWindows" to match the regular expression ^[_a-z][a-z0-9_]*$.(š´¾«
+ppython:S117é"XRename this parameter "outlineColor" to match the regular expression ^[_a-z][a-z0-9_]*$.(«·Ğ
+upython:S117î"]Rename this local variable "screenshotIm" to match the regular expression ^[_a-z][a-z0-9_]*$.(÷ËùÊ
+Lpython:S1135í"4Complete the task associated to this "TODO" comment.(¿«œ
+qpython:S117ú"YRename this parameter "imageFilename" to match the regular expression ^[_a-z][a-z0-9_]*$.(½ìêÂ
+Rpython:S1135ş"4Complete the task associated to this "TODO" comment.(¶‰¬«ıÿÿÿÿ
+qpython:S117Š"YRename this parameter "imageFilename" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÇÔî
+tpython:S117”"\Rename this local variable "tmpFilename" to match the regular expression ^[_a-z][a-z0-9_]*$.(¤Óâï
+Lpython:S1135"4Complete the task associated to this "TODO" comment.(ò÷t
+qpython:S117¬"YRename this parameter "imageFilename" to match the regular expression ^[_a-z][a-z0-9_]*$.(¢óÿ
+tpython:S117¸"\Rename this local variable "tmpFilename" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ûƒûÿ
+Vpython:S112Í">Replace this generic exception class with a more specific one.(’‹â±
+qpython:S117à"YRename this local variable "matchLen" to match the regular expression ^[_a-z][a-z0-9_]*$.(³ü‚¤
+vpython:S117ß"YRename this local variable "startPos" to match the regular expression ^[_a-z][a-z0-9_]*$.(«Ö±íıÿÿÿÿ
+xpython:S117ï"[Rename this local variable "foundMatch" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ’–üÿÿÿÿ
+vpython:S117î"YRename this local variable "startPos" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÁÆ€‡ùÿÿÿÿ
+Rpython:S1135ˆ"4Complete the task associated to this "TODO" comment.(¡ó¾ûÿÿÿÿ
+lpython:S117—"TRename this local variable "exA" to match the regular expression ^[_a-z][a-z0-9_]*$.(À‹Ÿ³
+qpython:S117“"TRename this local variable "exB" to match the regular expression ^[_a-z][a-z0-9_]*$.(›»¢îøÿÿÿÿ
+qpython:S117“"TRename this local variable "exG" to match the regular expression ^[_a-z][a-z0-9_]*$.(›»¢îøÿÿÿÿ
+qpython:S117“"TRename this local variable "exR" to match the regular expression ^[_a-z][a-z0-9_]*$.(›»¢îøÿÿÿÿ
+ypython:S117Œ"\Rename this parameter "expectedRGBColor" to match the regular expression ^[_a-z][a-z0-9_]*$.(œ¥éˆüÿÿÿÿ
+Mpython:S1135Ç"4Complete the task associated to this "TODO" comment.(È¦“
