@@ -19,11 +19,10 @@ class BasePage(object):
                 self.app[attr].click_input()
             case "ClassName":
                 self.app[attr].click_input()
-            
-
-    # 控件打印
-    def control_print(self):
-        self.app.print_control_identifiers()
+            case "auto_id":
+                self.app.child_window(auto_id=attr, control_type="Button").click_input()
+            case "Button":
+                self.app.child_window(title=attr, control_type="Button")
 
     # 获取控件名称
     def get_control_title(self, method, attr):
@@ -32,7 +31,10 @@ class BasePage(object):
                 return self.app[attr].window_text()
             case "ClassName":
                 return self.app[attr].window_text()
-
+            # case "Button":
+            #     return self.app.child_window(title=attr, control_type="Button").window_text()
+            case "window_re":
+                return self.app.child_window(title_re=attr, control_type="Text").window_text()
 
     # 画框(调试)
     def draw_outline(self, control):
@@ -45,6 +47,5 @@ class BasePage(object):
     def control_exists(self, controls):
         if self.app[controls].exists():
             return True
-
         else:
             return False

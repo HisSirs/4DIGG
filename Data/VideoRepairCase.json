@@ -1,53 +1,62 @@
 {
   "test_File_Import": {
     "Title": "测试文件导入",
-    "filePath": "D:\\Users\\Pictures",
+    "importFilePath": "D:\\Users\\Pictures\\Import",
     "test_assert": {
-      "Text": "File imported successfully"
+      "Text": "File Import Successfully"
     }
   },
   "test_Single_File_Remove": {
     "Title": "测试单个文件移除",
+    "importFilePath": "D:\\Users\\Pictures\\Remove",
     "test_assert": {
-      "Text": "File removed successfully"
+      "Text": "File Remove Successfully"
     }
   },
   "test_All_Files_Remove": {
     "Title": "测试多个文件移除",
+    "importFilePath": "D:\\Users\\Pictures\\Remove",
     "test_assert": {
-      "Text": "File removed successfully"
+      "Text": "File Remove Successfully"
     }
   },
   "test_File_Repair": {
     "Title": "测试文件修复",
+    "importFilePath": "D:\\Users\\Pictures\\Repair",
     "test_assert": {
-      "Text": "File Repaired successfully"
+      "Text": "File Repair Successfully"
     }
   },
   "test_File_High_Repair": {
     "Title": "测试文件高级修复",
+    "importFilePath": "D:\\Users\\Pictures\\HighRepair",
+    "highRepairPath": "D:\\Users\\Pictures\\HighRepair\\MatchFile",
     "test_assert": {
-      "Text": "File Repaired successfully"
+      "Text": "File Repair Successfully"
     }
   },
   "test_File_Preview": {
     "Title": "测试文件预览",
+    "importFilePath": "D:\\Users\\Pictures\\repair",
     "test_assert": {
-      "Text": "File Preview Complete"
+      "Text": "File Preview Successfully"
     }
   },
   "test_All_File_Export": {
     "Title": "测试所有文件导出",
-    "filePath": "D:\\Users\\Pictures",
+    "importFilePath": "D:\\Users\\Pictures\\Export",
+    "exportFilePath": "D:\\Users\\Pictures\\ExportResult",
     "test_assert": {
-      "Text": "File Exported successfully"
-    },
-    "test_Single_File_Export": {
-      "Title": "测试单个文件导出",
-      "filePath": "D:\\Users\\Pictures",
-      "test_assert": {
-        "Text": "File Exported successfully"
-      }
+      "Text": "File Export Successfully"
+    }
+  },
+  "test_Single_File_Export": {
+    "Title": "测试单个文件导出",
+    "importFilePath": "D:\\Users\\Pictures\\Export",
+    "exportFilePath": "D:\\Users\\Pictures\\ExportResult",
+    "test_assert": {
+      "Text": "File Export Successfully"
     }
   }
 }
+

@@ -9,7 +9,7 @@ import pytest
 from Core.ReadFile import readConfig
 from Common.Logger import logger
 from Core.PathHandle import CONFIG_DIR
-
+from Common.AppStart import closeApp
 
 def main():
     # 运行 pytest 命令来生成自定义路径的 HTML 报告
@@ -26,9 +26,9 @@ def main():
 
 
 if __name__ == "__main__":
-    logger = logger()
-    logger.info(f"python版本: Python{sys.version.split(' ')[0]}")
-    logger.info(f"配置文件路径: {CONFIG_DIR}")
-    logger.info(f"程序安装路径: {readConfig()['App']['AppPath']}")
+    logger().info(f"python版本: Python{sys.version.split(' ')[0]}")
+    logger().info(f"配置文件路径: {CONFIG_DIR}")
+    logger().info(f"程序安装路径: {readConfig()['App']['AppPath']}")
     
-    # main()
+    main()
+    closeApp()

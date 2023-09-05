@@ -11,20 +11,25 @@ from Core.ReadFile import readConfig
 
 def openApp():
     config = readConfig()
-
+    
     # 检查进程是否存在
     for pid in psutil.pids():
         if psutil.Process(pid).name() == config["App"]["ProcessName"]:
             break
     else:
         Application("uia").start(config["App"]["AppPath"])
-
+    
     # 连接程序, 方便调试
     app_connect = Application("uia").connect(path=config["App"]["AppPath"])
-
+    
     # 获取窗口对象
     app = app_connect[config["App"]["ProductName"]]
     while app.exists():
         break
-
+    
     return app
+
+
+def closeApp():
+    app = openApp()
+    app.close()

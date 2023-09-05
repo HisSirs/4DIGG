@@ -8,49 +8,57 @@ from testCase.doUITemp import doUITemp
 
 
 def test_File_Import():
-    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_File_Import").doUiTemp()
+    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_File_Import",
+                                               "VideoRepairCase.json").doUiTemp()
     assert actualValue == expectValue
     logger().info(f"{title} Pass")
 
 
-def test_Single_File_Remove(self):
-    actualValue, expectValue, title = self.doUITemp("Fix Video Errors", "test_Single_File_Remove").doUiTemp()
+def test_Single_File_Remove():
+    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_Single_File_Remove",
+                                               "VideoRepairCase.json").doUiTemp()
     assert actualValue == expectValue
     logger().info(f"{title} Pass")
 
 
 #
-def test_All_Files_Remove(self):
-    actualValue, expectValue, title = self.doUITemp("Fix Video Errors", "test_All_Files_Remove").doUiTemp()
+def test_All_Files_Remove():
+    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_All_Files_Remove",
+                                               "VideoRepairCase.json").doUiTemp()
     assert actualValue == expectValue
     logger().info(f"{title} Pass")
 
 
-def test_File_Repair(self):
-    actualValue, expectValue, title = self.doUITemp("Fix Video Errors", "test_File_Repair").doUiTemp()
+def test_File_Repair():
+    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_File_Repair",
+                                               "VideoRepairCase.json").doUiTemp()
     assert actualValue == expectValue
     logger().info(f"{title} Pass")
 
 
-def test_File_High_Repair(self):
-    actualValue, expectValue, title = self.doUITemp("Fix Video Errors", "test_File_High_Repair").doUiTemp()
+def test_File_High_Repair():
+    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_File_High_Repair",
+                                               "VideoRepairCase.json").doUiTemp()
     assert actualValue == expectValue
     logger().info(f"{title} Pass")
 
 
-def test_File_Preview(self):
-    actualValue, expectValue, title = self.doUITemp("Fix Video Errors", "test_File_Preview").doUiTemp()
+def test_File_Preview():
+    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_File_Preview",
+                                               "VideoRepairCase.json").doUiTemp()
     assert actualValue == expectValue
     logger().info(f"{title} Pass")
 
 
-def test_All_File_Export(self):
-    actualValue, expectValue, title = self.doUITemp("Fix Video Errors", "test_All_File_Export").doUiTemp()
+def test_All_File_Export():
+    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_All_File_Export",
+                                               "VideoRepairCase.json").doUiTemp()
     assert actualValue == expectValue
     logger().info(f"{title} Pass")
 
 
-def test_Single_File_Export(self):
-    actualValue, expectValue, title = self.doUITemp("Fix Video Errors", "test_Single_File_Export").doUiTemp()
+def test_Single_File_Export():
+    actualValue, expectValue, title = doUITemp("Fix Video Errors", "test_Single_File_Export",
+                                               "VideoRepairCase.json").doUiTemp()
     assert actualValue == expectValue
     logger().info(f"{title} Pass")
