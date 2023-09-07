@@ -56,11 +56,17 @@ def highRepair(app, filePath, num):
 
 
 # 移除单个文件
-def singleFileRemove():
+def singleFileRemove(location=True):
     # 点击一次不生效, 未找到原因
     addr = pyautogui.getWindowsWithTitle("4DDiG File Repair")[0]
+    # left, top = addr.left, addr.top
+    # print(f"窗口 '{addr.title}' 的左上角坐标是 ({left}, {top})")
     sleep(0.1)
-    pyautogui.click((600 + addr.left), (235 + addr.top))
+    # 视频和图片模块为true，文档和音频模块为false
+    if location:
+        pyautogui.click((600 + addr.left), (235 + addr.top))
+    else:
+        pyautogui.click((608 + addr.left), (194 + addr.top))
 
 
 # 等待修复完成
