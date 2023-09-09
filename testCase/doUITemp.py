@@ -11,7 +11,7 @@ import pyautogui
 
 from Common.AppStart import openApp
 from Common.Logger import logger
-from Core.Collection import singleFileRemove, waitRepairComplete, waitExportComplete, highRepair, importComplete,waitHighRepairComplete
+from Core.Collection import singleFileRemove, waitRepairComplete, waitExportComplete, highRepair, importComplete
 from Core.LocalPopup import localPopup, exportPopup
 from Core.PathHandle import IMG_DIR
 from Core.ReadFile import readJson
@@ -50,6 +50,9 @@ class doUITemp:
             time.sleep(0.5)
             if NOTZORE:
                 BasePage(self.app).control_click("Name", "Sure")
+        else:
+            BasePage(self.app).control_click("Name", "Repairing Lists")
+        
         logger().info("已返回首页")
     
     # 根据传入case调用不同的方法
@@ -139,7 +142,15 @@ class doUITemp:
         # 等待导入完成
         importComplete(self.app)
         # 获取导入成功的文件数量
-        text = BasePage(self.app).get_control_title("Name", "Repairing Lists")
+        if "Fix" in self.func or "Repair" in self.func:
+            text = BasePage(self.app).get_control_title("Name", "Repairing Lists")
+            
+        elif "Colorize" in self.func:
+            text = BasePage(self.app).get_control_title("Name", "Items to Colorize")
+        
+        elif "Enhance" in self.func:
+            text = BasePage(self.app).get_control_title("Name", "Pending Items")
+    
         fileNumber = int(text.split("(")[1][:-1])
         logger().info(f"文件导入完成, 已成功导入{fileNumber}个文件")
         
@@ -160,9 +171,9 @@ class doUITemp:
         removeNum = random.randint(1, importNumber - 1)
         logger().info(f"随机移除{removeNum}个文件, 请耐心等待")
         # 第一次点击无效, 需要多点击一次
-        singleFileRemove()
+        singleFileRemove(self.func)
         for _ in range(removeNum):
-            singleFileRemove()
+            singleFileRemove(self.func)
         
         # 获取移除之后的数量
         text = BasePage(self.app).get_control_title("Name", "Repairing Lists")

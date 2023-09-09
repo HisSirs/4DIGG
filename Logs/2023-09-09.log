@@ -1,0 +1,23 @@
+[32m 2023-09-09 11:29:57,163 main.py main <module> [line:30] INFO: python版本: Python3.11.4[0m
+[32m 2023-09-09 11:29:57,163 main.py main <module> [line:31] INFO: 配置文件路径: D:\PythonFile\tools\4DDIG\config.ini[0m
+[32m 2023-09-09 11:29:57,164 main.py main <module> [line:32] INFO: 程序安装路径: C:\Program Files\4DDiG File Repair\4DDiG File Repair.exe[0m
+[32m 2023-09-09 11:29:57,164 main.py main <module> [line:34] INFO: ************************************************************Start************************************************************[0m
+[32m 2023-09-09 11:30:05,224 doUITemp.py doUITemp importFile [line:136] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-09 11:30:09,143 LocalPopup.py LocalPopup localPopup [line:27] INFO: 文件导入路径: D:\Users\Pictures\Import[0m
+[32m 2023-09-09 11:30:12,930 doUITemp.py doUITemp importFile [line:140] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-09 11:30:28,080 doUITemp.py doUITemp importFile [line:147] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-09 11:30:33,734 doUITemp.py doUITemp importFile [line:136] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-09 11:30:37,471 LocalPopup.py LocalPopup localPopup [line:27] INFO: 文件导入路径: D:\Users\Pictures\Remove[0m
+[32m 2023-09-09 11:30:41,125 doUITemp.py doUITemp importFile [line:140] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-09 11:30:56,128 doUITemp.py doUITemp importFile [line:147] INFO: 文件导入完成, 已成功导入2个文件[0m
+[32m 2023-09-09 11:30:56,128 doUITemp.py doUITemp singleFileRemove [line:164] INFO: 随机移除1个文件, 请耐心等待[0m
+[32m 2023-09-09 11:30:58,279 doUITemp.py doUITemp singleFileRemove [line:173] INFO: 移除之后剩余1个文件[0m
+[32m 2023-09-09 11:31:03,830 doUITemp.py doUITemp importFile [line:136] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-09 11:31:07,517 LocalPopup.py LocalPopup localPopup [line:27] INFO: 文件导入路径: D:\Users\Pictures\Remove[0m
+[32m 2023-09-09 11:31:11,237 doUITemp.py doUITemp importFile [line:140] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-09 11:43:58,993 doUITemp.py doUITemp importFile [line:136] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-09 11:44:02,645 LocalPopup.py LocalPopup localPopup [line:27] INFO: 文件导入路径: D:\Users\Pictures\Export[0m
+[32m 2023-09-09 11:44:06,583 doUITemp.py doUITemp importFile [line:140] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-09 11:44:21,413 doUITemp.py doUITemp importFile [line:155] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-09 11:44:23,166 doUITemp.py doUITemp allFileExport [line:289] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-09 11:44:26,257 Collection.py Collection waitRepairComplete [line:93] INFO: 1个文件修复成功, 0个文件修复失败[0m

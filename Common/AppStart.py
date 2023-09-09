@@ -33,3 +33,5 @@ def openApp():
 def closeApp():
     app = openApp()
     app.close()
+    app["Exit"].click_input()
+

@@ -29,10 +29,6 @@ if __name__ == '__main__':
     AppPath = readConfig()['App']["AppPath"]
     ProductName = readConfig()['App']["ProductName"]
     ProcessName = readConfig()['App']["ProcessName"]
-    print(AppPath)
-    print(ProductName)
-    print(ProcessName)
-    print()
     
     case = readJson("VideoRepairCase.json")
     print(case)

@@ -29,8 +29,8 @@
   },
   "test_File_High_Repair": {
     "Title": "测试文件高级修复",
-    "importFilePath": "D:\\Users\\Pictures\\HighRepair",
-    "highRepairPath": "D:\\Users\\Pictures\\HighRepair\\MatchFile",
+    "importFilePath": "D:\\Users\\Pictures\\HighRepair\\wmv",
+    "highRepairPath": "D:\\Users\\Pictures\\HighRepair\\wmv\\MatchFile",
     "test_assert": {
       "Text": "File Repair Successfully"
     }
