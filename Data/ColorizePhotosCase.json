@@ -1,0 +1,61 @@
+{
+  "test_File_Import": {
+    "Title": "测试文件导入",
+    "importFilePath": "D:\\Users\\Pictures\\Import",
+    "test_assert": {
+      "Text": "File Import Successfully"
+    }
+  },
+  "test_demo_File_Import": {
+    "Title": "测试demo文件导入",
+    "importFilePath": "",
+    "test_assert": {
+      "Text": "File Remove Successfully"
+    }
+  },
+  "test_All_Files_Remove": {
+    "Title": "测试多个文件移除",
+    "importFilePath": "D:\\Users\\Pictures\\Remove",
+    "test_assert": {
+      "Text": "File Remove Successfully"
+    }
+  },
+  "test_File_Preview_Enhance": {
+    "Title": "测试文件预览增强",
+    "importFilePath": "D:\\Users\\Pictures\\Enhance",
+    "test_assert": {
+      "Text": "File Preview Enhance Successfully"
+    }
+  },
+  "test_File_Preview_Enhance_face": {
+    "Title": "开启人脸检测增强预览成功",
+    "importFilePath": "D:\\Users\\Pictures\\Enhance",
+    "test_assert": {
+      "Text": "File Face Preview Enhance Successfully"
+    }
+  },
+  "test_File_Preview": {
+    "Title": "测试文件预览",
+    "importFilePath": "D:\\Users\\Pictures\\repair",
+    "test_assert": {
+      "Text": "File Preview Successfully"
+    }
+  },
+  "test_All_File_Export": {
+    "Title": "测试所有文件增强导出",
+    "importFilePath": "D:\\Users\\Pictures\\Export",
+    "exportFilePath": "D:\\Users\\Pictures\\ExportResult",
+    "test_assert": {
+      "Text": "File Export Successfully"
+    }
+  },
+  "test_Single_File_Export": {
+    "Title": "清除历史记录",
+    "importFilePath": "D:\\Users\\Pictures\\Export",
+    "exportFilePath": "D:\\Users\\Pictures\\ExportResult",
+    "test_assert": {
+      "Text": "File Export Successfully"
+    }
+  }
+}
+

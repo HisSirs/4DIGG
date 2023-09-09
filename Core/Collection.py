@@ -14,16 +14,34 @@ from time import sleep
 from Core.PathHandle import IMG_DIR
 
 
-
 # 等待导入完成
-def importComplete(app):
+def importComplete(app, func):
     # sleep会根据单个导入的时间来定
-    while True:
-        text01 = BasePage(app).get_control_title("window_re", "Repairing Lists(.*)")
-        sleep(10)
-        text02 = BasePage(app).get_control_title("window_re", "Repairing Lists(.*)")
-        if text02 == text01:
-            break
+    if "fix" in func or "repair" in func:
+        while True:
+            text01 = BasePage(app).get_control_title("window_re", "Repairing Lists(.*)")
+            sleep(10)
+            text02 = BasePage(app).get_control_title("window_re", "Repairing Lists(.*)")
+            if text02 == text01:
+                break
+    elif "Enhance" in func:
+        while True:
+            text01 = BasePage(app).get_control_title("window_re", "Pending Items(.*)")
+            sleep(10)
+            text02 = BasePage(app).get_control_title("window_re", "Pending Items(.*)")
+            if text02 == text01:
+                break
+        logger().info("关闭导入完成弹窗")
+        BasePage(app).control_click("Name", "OK")
+    elif "Colorize" in func:
+        while True:
+            text01 = BasePage(app).get_control_title("window_re", "Items to Colorize(.*)")
+            sleep(10)
+            text02 = BasePage(app).get_control_title("window_re", "Items to Colorize(.*)")
+            if text02 == text01:
+                break
+        logger().info("关闭导入完成弹窗")
+        BasePage(app).control_click("Name", "OK")
 
 
 def highRepair(app, filePath, num):
@@ -38,7 +56,7 @@ def highRepair(app, filePath, num):
             localPopup(app=app, filePath=filePath, isMatchFile=True)
             sleep(0.5)
             BasePage(app).control_click("Name", "Start Repair")
-            
+
             logger().info("高级修复中, 请耐心等待")
             sleep(1)
             # 等待高级修修复完成
@@ -46,12 +64,11 @@ def highRepair(app, filePath, num):
             sleep(0.5)
             logger().info(f"成功修复{no + 1}个文件")
             sleep(1)
-        
-        
+
         app.child_window(auto_id="PART_list", control_type="List").children()[no].click_input()
         no += 1
         pyautogui.press("down")
-    
+
     return True
 
 
@@ -76,27 +93,27 @@ def waitRepairComplete(app):
         text = text.split("(")[1][:-1]
         if text == "0":
             break
-            
+
     win = uiautomation.WindowControl(AutomationId="root")
     text = win.TextControl(AutomationId="text").Name
-    
+
     if "successfully." in text:
         success = text.split(" ")[0]
         false = 0
-    
+
     elif "successfully," in text:
         success = text.split(" ")[0]
         false = text.split(",")[1].split(" ")[0]
         logger().info(f"{success}个文件修复成功, {false}个文件修复失败")
-    
+
     else:
         success = 0
         false = text.split(' ')[0]
-        
+
     logger().info(f"{success}个文件修复成功, {false}个文件修复失败")
-    
+
     BasePage(app).control_click("Name", "View Results")
-    
+
     return false, success
 
 
@@ -105,7 +122,7 @@ def waitHighRepairComplete(app):
     while app["Advanced Repair Complete"].exists():
         sleep(1)
         BasePage(app).control_click("Name", "OK")
-        
+
         break
 
 

@@ -11,7 +11,8 @@ import pyautogui
 
 from Common.AppStart import openApp
 from Common.Logger import logger
-from Core.Collection import singleFileRemove, waitRepairComplete, waitExportComplete, highRepair, importComplete,waitHighRepairComplete
+from Core.Collection import singleFileRemove, waitRepairComplete, waitExportComplete, highRepair, importComplete, \
+    waitHighRepairComplete
 from Core.LocalPopup import localPopup, exportPopup
 from Core.PathHandle import IMG_DIR
 from Core.ReadFile import readJson
@@ -46,6 +47,8 @@ class doUITemp:
         if self.func != "File Repair" or self.func != "Audio Repair":
             img = os.path.join(IMG_DIR, "GoBack.png")
             imgAddr = pyautogui.locateCenterOnScreen(img)
+            # left, top = imgAddr.left, imgAddr.top
+            # print(f"窗口 '{imgAddr.title}' 的左上角坐标是 ({left}, {top})")
             pyautogui.click(imgAddr.x, imgAddr.y)
             time.sleep(0.5)
             if NOTZORE:
@@ -128,18 +131,45 @@ class doUITemp:
         """
         导入功能, 由于是导入全部文件, 所以只看修复列表中有无文件, 有文件则就算导入成功
         """
-        # 点击添加文件按钮
-        BasePage(self.app).control_click("Name", "Add Video(s)")
-        logger().info("打开本地文件导入弹窗")
-        
-        # 本地弹窗的处理
-        localPopup(self.app, filePath=self.importFilePath)
-        logger().info("文件导入中, 请耐心等待")
-        
-        # 等待导入完成
-        importComplete(self.app)
-        # 获取导入成功的文件数量
-        text = BasePage(self.app).get_control_title("Name", "Repairing Lists")
+        if "fix" in self.func or "repair" in self.func:
+            # 修复模块点击添加文件按钮
+            BasePage(self.app).control_click("Name", "Add Video(s)")
+            logger().info("打开本地文件导入弹窗")
+
+            # 本地弹窗的处理
+            localPopup(self.app, filePath=self.importFilePath)
+            logger().info("文件导入中, 请耐心等待")
+            # 等待导入完成
+            importComplete(self.app, self.func)
+            # 获取导入成功的文件数量
+            text = BasePage(self.app).get_control_title("Name", "Repairing Lists")
+
+        elif "Enhance" in self.func:
+            # 视频、图片增强模块点击添加文件按钮
+            BasePage(self.app).control_click("Name", "Add/Drag Photo")
+            logger().info("打开本地文件导入弹窗")
+
+            # 本地弹窗的处理
+            localPopup(self.app, filePath=self.importFilePath)
+            logger().info("文件导入中, 请耐心等待")
+            # 等待导入完成
+            importComplete(self.app, self.func)
+            # 获取导入成功的文件数量
+            text = BasePage(self.app).get_control_title("Name", "Pending Items")
+
+        elif "Colorize" in self.func:
+            # 视频、图片上色模块点击添加文件按钮
+            BasePage(self.app).control_click("Name", "Add/Drag Photo")
+            logger().info("打开本地文件导入弹窗")
+
+            # 本地弹窗的处理
+            localPopup(self.app, filePath=self.importFilePath)
+            logger().info("文件导入中, 请耐心等待")
+            # 等待导入完成
+            importComplete(self.app, self.func)
+            # 获取导入成功的文件数量
+            text = BasePage(self.app).get_control_title("Name", "Items to Colorize")
+
         fileNumber = int(text.split("(")[1][:-1])
         logger().info(f"文件导入完成, 已成功导入{fileNumber}个文件")
         
@@ -160,9 +190,14 @@ class doUITemp:
         removeNum = random.randint(1, importNumber - 1)
         logger().info(f"随机移除{removeNum}个文件, 请耐心等待")
         # 第一次点击无效, 需要多点击一次
-        singleFileRemove()
-        for _ in range(removeNum):
+        if self.func in ["File Repair", "Audio Repair"]:
+            singleFileRemove(location=False)
+            for _ in range(removeNum):
+                singleFileRemove(location=False)
+        else:
             singleFileRemove()
+            for _ in range(removeNum):
+                singleFileRemove()
         
         # 获取移除之后的数量
         text = BasePage(self.app).get_control_title("Name", "Repairing Lists")
