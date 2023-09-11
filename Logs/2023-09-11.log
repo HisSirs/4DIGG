@@ -1,0 +1,113 @@
+[32m 2023-09-11 20:13:51,666 main.py main <module> [line:30] INFO: python版本: Python3.11.4[0m
+[32m 2023-09-11 20:13:51,666 main.py main <module> [line:31] INFO: 配置文件路径: D:\PythonFile\tools\4DDIG\config.ini[0m
+[32m 2023-09-11 20:13:51,667 main.py main <module> [line:32] INFO: 程序安装路径: C:\Program Files\4DDiG File Repair\4DDiG File Repair.exe[0m
+[32m 2023-09-11 20:13:51,667 main.py main <module> [line:33] INFO: ************************************************************Start************************************************************[0m
+[32m 2023-09-11 20:13:54,723 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:13:55,941 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Import[0m
+[32m 2023-09-11 20:13:57,143 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:14:07,944 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:14:07,945 test_document_repair.py test_document_repair test_File_Import [line:20] INFO: 测试文件导入 Pass[0m
+[32m 2023-09-11 20:14:13,574 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:14:14,841 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Remove[0m
+[32m 2023-09-11 20:14:16,011 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:14:26,695 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:14:26,696 doUITemp.py doUITemp singleFileRemove [line:151] INFO: 随机移除1个文件, 请耐心等待[0m
+[32m 2023-09-11 20:14:27,290 doUITemp.py doUITemp singleFileRemove [line:160] INFO: 移除之后剩余0个文件[0m
+[32m 2023-09-11 20:14:27,290 test_document_repair.py test_document_repair test_Single_File_Remove [line:27] INFO: 测试单个文件移除 Pass[0m
+[32m 2023-09-11 20:14:32,376 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:14:33,545 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Remove[0m
+[32m 2023-09-11 20:14:34,712 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:14:45,524 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:14:46,474 doUITemp.py doUITemp allFileRemove [line:178] INFO: 移除所有的文件[0m
+[32m 2023-09-11 20:14:46,635 doUITemp.py doUITemp allFileRemove [line:183] INFO: 移除之后剩余0个文件[0m
+[32m 2023-09-11 20:14:46,636 test_document_repair.py test_document_repair test_All_Files_Remove [line:34] INFO: 测试多个文件移除 Pass[0m
+[32m 2023-09-11 20:14:51,729 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:14:52,930 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Repair[0m
+[32m 2023-09-11 20:14:54,180 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:15:04,813 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:15:05,175 doUITemp.py doUITemp fileRepair [line:200] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:15:07,640 Collection.py Collection waitRepairComplete [line:93] INFO: 1个文件修复成功, 0个文件修复失败[0m
+[32m 2023-09-11 20:15:10,013 test_document_repair.py test_document_repair test_File_Repair [line:41] INFO: 测试文件修复 Pass[0m
+[32m 2023-09-11 20:15:15,085 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:15:16,387 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\HighRepair\psd[0m
+[32m 2023-09-11 20:15:17,571 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:15:28,283 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:15:28,648 doUITemp.py doUITemp fileHighRepair [line:219] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:15:30,837 Collection.py Collection waitRepairComplete [line:93] INFO: 0个文件修复成功, 1个文件修复失败[0m
+[32m 2023-09-11 20:15:36,023 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\HighRepair\psd\MatchFile[0m
+[32m 2023-09-11 20:15:38,158 Collection.py Collection highRepair [line:43] INFO: 高级修复中, 请耐心等待[0m
+[32m 2023-09-11 20:15:41,728 Collection.py Collection highRepair [line:48] INFO: 成功修复1个文件[0m
+[32m 2023-09-11 20:15:43,063 test_document_repair.py test_document_repair test_File_High_Repair_psd [line:48] INFO: 测试文件高级修复 Pass[0m
+[32m 2023-09-11 20:15:48,184 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:15:49,501 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Export[0m
+[32m 2023-09-11 20:15:50,770 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:16:01,398 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:16:01,764 doUITemp.py doUITemp allFileExport [line:268] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:16:04,406 Collection.py Collection waitRepairComplete [line:93] INFO: 1个文件修复成功, 0个文件修复失败[0m
+[32m 2023-09-11 20:16:23,572 doUITemp.py doUITemp allFileExport [line:287] INFO: 成功导出1个文件[0m
+[32m 2023-09-11 20:16:28,674 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:16:29,925 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Export[0m
+[32m 2023-09-11 20:16:31,162 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:16:41,965 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:16:42,338 doUITemp.py doUITemp singleFileExport [line:302] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:16:44,822 Collection.py Collection waitRepairComplete [line:93] INFO: 1个文件修复成功, 0个文件修复失败[0m
+[32m 2023-09-11 20:17:03,543 doUITemp.py doUITemp singleFileExport [line:321] INFO: 成功导出1个文件[0m
+[32m 2023-09-11 20:17:03,543 test_document_repair.py test_document_repair test_Single_File_Export [line:70] INFO: 测试单个文件导出 Pass[0m
+[32m 2023-09-11 20:17:09,231 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:17:10,500 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Import[0m
+[32m 2023-09-11 20:17:11,650 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:17:33,333 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:17:33,333 test_video_repair.py test_video_repair test_File_Import [line:24] INFO: 测试文件导入 Pass[0m
+[32m 2023-09-11 20:17:41,646 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:17:42,915 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Remove[0m
+[32m 2023-09-11 20:17:44,115 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:18:05,295 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:18:06,838 doUITemp.py doUITemp allFileRemove [line:178] INFO: 移除所有的文件[0m
+[32m 2023-09-11 20:18:07,245 doUITemp.py doUITemp allFileRemove [line:183] INFO: 移除之后剩余0个文件[0m
+[32m 2023-09-11 20:18:07,245 test_video_repair.py test_video_repair test_All_Files_Remove [line:39] INFO: 测试多个文件移除 Pass[0m
+[32m 2023-09-11 20:18:13,127 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:18:14,395 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Repair[0m
+[32m 2023-09-11 20:18:15,529 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:18:38,936 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入48个文件[0m
+[32m 2023-09-11 20:18:41,555 doUITemp.py doUITemp fileRepair [line:200] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:18:49,070 Collection.py Collection waitRepairComplete [line:93] INFO: 48个文件修复成功, 0个文件修复失败[0m
+[32m 2023-09-11 20:18:51,698 test_video_repair.py test_video_repair test_File_Repair [line:46] INFO: 测试文件修复 Pass[0m
+[32m 2023-09-11 20:18:57,521 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:18:58,839 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\HighRepair\wmv[0m
+[32m 2023-09-11 20:18:59,990 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:19:21,426 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入2个文件[0m
+[32m 2023-09-11 20:19:22,346 doUITemp.py doUITemp fileHighRepair [line:219] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:19:22,736 Collection.py Collection waitRepairComplete [line:93] INFO: 0个文件修复成功, 2个文件修复失败[0m
+[32m 2023-09-11 20:19:28,818 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\HighRepair\wmv\MatchFile[0m
+[32m 2023-09-11 20:19:31,338 Collection.py Collection highRepair [line:43] INFO: 高级修复中, 请耐心等待[0m
+[32m 2023-09-11 20:19:37,010 Collection.py Collection highRepair [line:48] INFO: 成功修复1个文件[0m
+[32m 2023-09-11 20:19:41,832 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\HighRepair\wmv\MatchFile[0m
+[32m 2023-09-11 20:19:44,384 Collection.py Collection highRepair [line:43] INFO: 高级修复中, 请耐心等待[0m
+[32m 2023-09-11 20:19:49,472 Collection.py Collection highRepair [line:48] INFO: 成功修复2个文件[0m
+[32m 2023-09-11 20:19:50,857 test_video_repair.py test_video_repair test_File_High_Repair [line:53] INFO: 测试文件高级修复 Pass[0m
+[32m 2023-09-11 20:19:56,512 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:19:57,713 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\repair[0m
+[32m 2023-09-11 20:19:58,982 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:20:20,437 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:20:21,187 doUITemp.py doUITemp filePreview [line:240] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:20:21,848 Collection.py Collection waitRepairComplete [line:93] INFO: 1个文件修复成功, 0个文件修复失败[0m
+[32m 2023-09-11 20:20:25,107 doUITemp.py doUITemp filePreview [line:248] INFO: 正在播放[0m
+[32m 2023-09-11 20:20:39,071 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:20:40,372 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Export[0m
+[32m 2023-09-11 20:20:41,540 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:21:02,837 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:21:03,578 doUITemp.py doUITemp allFileExport [line:268] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:21:04,285 Collection.py Collection waitRepairComplete [line:93] INFO: 1个文件修复成功, 0个文件修复失败[0m
+[32m 2023-09-11 20:21:25,734 doUITemp.py doUITemp allFileExport [line:287] INFO: 成功导出1个文件[0m
+[32m 2023-09-11 20:21:25,734 test_video_repair.py test_video_repair test_All_File_Export [line:67] INFO: 测试所有文件导出 Pass[0m
+[32m 2023-09-11 20:21:31,423 doUITemp.py doUITemp importFile [line:109] INFO: 打开本地文件导入弹窗[0m
+[32m 2023-09-11 20:21:32,691 LocalPopup.py LocalPopup localPopup [line:28] INFO: 文件导入路径: D:\Users\Pictures\Export[0m
+[32m 2023-09-11 20:21:33,958 doUITemp.py doUITemp importFile [line:113] INFO: 文件导入中, 请耐心等待[0m
+[32m 2023-09-11 20:21:55,437 doUITemp.py doUITemp importFile [line:131] INFO: 文件导入完成, 已成功导入1个文件[0m
+[32m 2023-09-11 20:21:56,164 doUITemp.py doUITemp singleFileExport [line:302] INFO: 修复中, 请耐心等待[0m
+[32m 2023-09-11 20:21:56,633 Collection.py Collection waitRepairComplete [line:93] INFO: 1个文件修复成功, 0个文件修复失败[0m
+[32m 2023-09-11 20:22:17,553 doUITemp.py doUITemp singleFileExport [line:321] INFO: 成功导出1个文件[0m
+[32m 2023-09-11 20:22:17,554 test_video_repair.py test_video_repair test_Single_File_Export [line:74] INFO: 测试单个文件导出 Pass[0m
+[32m 2023-09-11 20:22:20,177 RobotNotification.py RobotNotification send_msg [line:37] INFO: 文本发送结果: {"errcode":0,"errmsg":"ok"}[0m
+[32m 2023-09-11 20:22:20,822 RobotNotification.py RobotNotification send_file [line:57] INFO: 文件发送结果: {"errcode":0,"errmsg":"ok"}[0m
+[32m 2023-09-11 20:22:20,825 main.py main <module> [line:36] INFO: ************************************************************ End ************************************************************[0m

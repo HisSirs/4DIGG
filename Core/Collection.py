@@ -39,7 +39,7 @@ def highRepair(app, filePath, num):
             localPopup(app=app, filePath=filePath, isMatchFile=True)
             sleep(0.5)
             BasePage(app).control_click("Name", "Start Repair")
-            
+
             logger().info("高级修复中, 请耐心等待")
             sleep(1)
             # 等待高级修修复完成
@@ -47,23 +47,23 @@ def highRepair(app, filePath, num):
             sleep(0.5)
             logger().info(f"成功修复{no + 1}个文件")
             sleep(1)
-        
+
         app.child_window(auto_id="PART_list", control_type="List").children()[no].click_input()
         no += 1
         pyautogui.press("down")
-    
+
     return True
 
 
 # 移除单个文件
 def singleFileRemove(func):
     # 点击一次不生效, 未找到原因
-    addr = pyautogui.getWindowsWithTitle("4DDiG File Repair")[0]
+    adder = pyautogui.getWindowsWithTitle("4DDiG File Repair")[0]
     sleep(0.1)
     if func in ["File Repair", "Audio Repair"]:
-        pyautogui.click((608 + addr.left), (194 + addr.top))
+        pyautogui.click((608 + adder.left), (194 + adder.top))
     else:
-        pyautogui.click((600 + addr.left), (235 + addr.top))
+        pyautogui.click((600 + adder.left), (235 + adder.top))
 
 
 # 等待修复完成
@@ -73,27 +73,28 @@ def waitRepairComplete(app):
         text = text.split("(")[1][:-1]
         if text == "0":
             break
-    
+
     win = uiautomation.WindowControl(AutomationId="root")
     text = win.TextControl(AutomationId="text").Name
-    
+
     if "successfully." in text:
         success = text.split(" ")[0]
         false = 0
-    
+
     elif "successfully," in text:
         success = text.split(" ")[0]
         false = text.split(",")[1].split(" ")[0]
         logger().info(f"{success}个文件修复成功, {false}个文件修复失败")
-    
+
     else:
         success = 0
         false = text.split(' ')[0]
-    
+
     logger().info(f"{success}个文件修复成功, {false}个文件修复失败")
-    
+
+    sleep(2)
     BasePage(app).control_click("Name", "View Results")
-    
+
     return false, success
 
 
@@ -102,24 +103,25 @@ def waitHighRepairComplete(app):
     while app["Advanced Repair Complete"].exists():
         sleep(1)
         BasePage(app).control_click("Name", "OK")
-        
+
         break
 
 
 # 等待导出完成
-def waitExportComplete(app, isSingleExport=False):
+def waitExportComplete(app):
     path = os.path.join(IMG_DIR, "Complete.png")
     while True:
         if pyautogui.locateOnScreen(path):
             break
-    if not isSingleExport:
-        text = BasePage(app).get_control_title("window_re", "(.*)files exported! You can check them in File Manager.")
+    try:
+        text = BasePage(app).get_control_title("window_re", "(.*) files exported! You can check them in File Manager.")
         result = int(text.split(" ")[0])
-    else:
+    except:
         result = 1
+
     sleep(2)
-    BasePage(app).control_click("Name", "View Results")
+    BasePage(app).control_click("Button", "View Results")
     sleep(2)
     pyautogui.hotkey("Alt", "F4")
-    
+
     return result

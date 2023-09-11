@@ -12,6 +12,7 @@ import pyperclip
 from Common.Logger import logger
 from time import sleep
 
+
 # 导入弹窗
 def localPopup(app, filePath, isMatchFile=False):
     # 将路径添加至剪切板
@@ -23,32 +24,33 @@ def localPopup(app, filePath, isMatchFile=False):
     pyautogui.hotkey("ctrl", "v")
     # 点击“打开”按钮
     app.child_window(title="打开(O)", auto_id="1", control_type="Button").click_input()
-    
+
     logger().info(f"文件导入路径: {filePath}")
 
     app.child_window(auto_id="0", control_type="ListItem").click_input()
-    
+
     if not isMatchFile:
         # 全选
         pyautogui.hotkey("ctrl", "a")
     # 点击“打开”按钮
     app.child_window(title="打开(O)", auto_id="1", control_type="Button").click_input()
 
+
 # 导出弹窗
 def exportPopup(app, filePath):
     if os.path.exists(filePath):
         shutil.rmtree(filePath)
-        
+
     os.mkdir(filePath)
     path = filePath.split("\\")
-    
+
     # 快速访问的路径存在中文, 需要用英文替换
     Documents = "文档"
     Pictures = "图片"
     Downloads = "下载"
     Videos = "视频"
     Music = "音乐"
-    
+
     app.child_window(title="此电脑", control_type="TreeItem").click_input()
     try:
         app.child_window(title_re=f"(.*)({path[0]})", control_type="TreeItem").click_input()
@@ -66,6 +68,7 @@ def exportPopup(app, filePath):
             app.child_window(title=f"{path[i]}", control_type="TreeItem").click_input()
             sleep(1)
     except:
-        pyautogui.vscroll(-20)
-    
+        for _ in range(5):
+            pyautogui.press("down")
+
     app["确定"].click_input()

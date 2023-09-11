@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>4DDiG File Repair测试报告</title>
+       <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src=" https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/5.1.2/echarts.min.js"></script>
+    <!--    页面样式-->
+    <style type="text/css">
+        /*标题样式*/
+
+        .main {
+            background: rgba(7, 10, 88, 0.99);
+        }
+
+        .title {
+            width: auto;
+            height: 80px;
+            text-align: center;
+            font: bolder 30px/80px "Microsoft YaHei UI";
+            color: #fff;
+            background: rgba(3, 14, 70, 0.5);
+            border-bottom: solid 1px rgb(3, 14, 70);
+            margin-bottom: 10px;
+        }
+
+        .content-box {
+            height: 700px;
+            width: 100%;
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .box1 {
+            flex: 3;
+        }
+
+        .box2 {
+            flex: 5;
+            margin: 0 10px;
+        }
+
+        .box3 {
+            flex: 4;
+        }
+
+        .panel {
+            position: relative;
+            border: 1px solid rgba(25, 186, 139, 0.17);
+            background: rgba(3, 14, 70, 0.5);
+            padding: 0 10px 50px;
+            margin-bottom: 10px;
+        }
+
+        .panel h2, .test_info h2 {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #007bff;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .panel .chart {
+            height: 250px;
+        }
+
+        .panel .chart2 {
+            height: 350px;
+        }
+
+        .panel .desc {
+            height: 150px;
+        }
+
+        .panel .desc .info {
+            font: normal 18px/25px "Microsoft YaHei UI";
+            color: #fff;
+            display: flex;
+        }
+
+        .panel .desc .info div {
+            padding: 10px;
+            border: solid 1px #6c757d;
+        }
+
+        .panel .desc .info div span {
+            margin-left: 20px;
+        }
+
+
+        /* 执行信息样式   */
+        .test_info {
+            width: 100%;
+            padding: 20px 100px;
+            background: rgba(3, 14, 70, 0.5);
+
+        }
+
+        .table td, .table th {
+            border: solid 1px #5765a4 !important;
+            padding: 0 !important;
+            line-height: 40px;
+            text-align: center;
+            height: 40px;
+            color: #fff;
+        }
+
+        select {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            height: 2em;
+            width: 8em;
+            margin-left: 2em;
+        }
+
+        option {
+            text-align: center;
+            height: 36px;
+            font: none 18px/36px "Microsoft YaHei UI";
+            color: #28a745 !important;
+        }
+
+        .test_log {
+            background: rgba(163, 171, 189, 0.15);
+            width: 100%;
+            height: 50px;
+            border-top: none;
+            border-bottom: none;
+            display: none;
+            text-align: left;
+        }
+
+        .test_log td {
+            text-align: left;
+            height: 30px;
+            margin: 0;
+            padding-left: 3em;
+            padding-right: 3em;
+            font: none 18px/24px "Microsoft YaHei UI";
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+            color: #fff;
+            line-height: 22px;
+            font-size: 14px
+        }
+
+        .chart4 {
+            overflow: auto;
+            width: 100%;
+            height: 600px;
+
+        }
+
+        .chart4::-webkit-scrollbar {
+            width: 10px;
+
+        }
+
+        .chart4::-webkit-scrollbar-thumb {
+            /*滚动条里面小方块*/
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 5px rgba(4, 0, 225, 0.62);
+            background: #272789;
+            height: 10px;
+
+        }
+
+        .chart4::-webkit-scrollbar-track {
+            /*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 21, 255, 0.54);
+            border-radius: 10px;
+            background: rgba(214, 214, 214, 0.64);
+
+        }
+
+        /*详细内容描述的小标题*/
+        .table_title {
+            text-align: center;
+            background: rgba(1, 2, 37, 0.72);
+            font: bold 18px/30px 'Microsoft YaHei UI';
+            color: #fff;
+            border-radius: 10px
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <div class="title">
+        4DDiG File Repair测试报告
+    </div>
+    <div class="content-box">
+        <div class="box1">
+            <div class="panel">
+                <h2>执行结果</h2>
+                <div class="chart" id="char3"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel ">
+                <h2>成功占比</h2>
+                <div class="chart" id="char1"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="panel">
+                <h2>运行信息</h2>
+                <div class="desc">
+
+                    <div class="info">
+                        <div style="flex:5">
+                            <button type="button" class="btn btn-primary btn-sm">开始时间</button>
+                            <span>2023-09-11 20:13:51</span>
+                        </div>
+                        <div style="flex:5">
+                            <button type="button" class="btn btn-primary btn-sm">用例总数</button>
+                            <span>16</span>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div style="flex:5">
+                            <button type="button" class="btn btn-primary btn-sm">运行时长</button>
+                            <span>508.073853 S</span>
+                        </div>
+                        <div style="flex:5">
+                            <button type="button" class="btn btn-primary btn-sm ">测试人员</button>
+                            <span>4DDiG自动化小组成员</span>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div style="flex:5">
+                            <button type="button" class="btn btn-primary btn-sm">成功用例</button>
+                            <span>13</span>
+                        </div>
+                        <div style="flex:5">
+                            <button type="button" class="btn btn-primary btn-sm ">通过率</button>
+                            <span>81.25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <h2>通过率趋势图</h2>
+                <div class="chart2" id="char2"></div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="panel">
+                <h2>历史构建结果</h2>
+                <div class="chart4">
+                    <table class="table" style="color: #d6d6d6;padding: 0">
+                        <thead>
+                        <tr>
+                            <th scope="col">执行时间</th>
+                            <th scope="col">用例总数</th>
+                            <th scope="col">成功用例数</th>
+                            <th scope="col">通过率</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        <tr>
+                            <th scope="row">2023-09-11 20:13:51</th>
+                            <td>16</td>
+                            <td>13</td>
+                            <td>81.25%</td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="test_info">
+        <h2>本次运行详情</h2>
+        <div class="table_data">
+
+            <table class="table" style="color: #fff">
+                <thead class="text-light" style="background: rgba(3, 14, 70, 0.5)">
+                <tr>
+                    <th scope="col" style="width: 5%;padding: 0">编号</th>
+                    <th scope="col" style="width: 20%;padding: 0">
+                        <span>用例模块</span>
+                        <select id="testClass">
+                            <option>所有</option>
+                            
+                            <option value="testCasetest_document_repairpy">testCase\test_document_repair.py</option>
+                            
+                            <option value="testCasetest_video_repairpy">testCase\test_video_repair.py</option>
+                            
+                        </select>
+
+                    </th>
+                    <th scope="col" style="width: 15%;padding: 0">测试方法</th>
+                    <th scope="col" style="width: 20%;padding: 0">用例描述</th>
+                    <th scope="col" style="width: 10%;padding: 0">执行时间</th>
+                    <th scope="col" style="width: 20%;padding: 0">
+
+                        <span>执行结果</span>
+                        <select id="testResult">
+                            <option>所有</option>
+                            <option class="text-success">成功</option>
+                            <option class="text-danger">失败</option>
+                            <option class="text-warning">错误</option>
+                            <option class="text-info">跳过</option>
+                        </select>
+
+                    </th>
+                    <th scope="col" style="width: 10%;padding: 0">详细信息</th>
+                </tr>
+                </thead>
+                <tbody>
+                
+                <tr class="case_">
+                    <td>1</td>
+                    <td class="testCasetest_document_repairpy">testCase\test_document_repair.py</td>
+                    <td>test_File_Import</td>
+                    <td>None</td>
+                    <td>15.914726</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Import
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:test_document_repair.py:20 测试文件导入 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>2</td>
+                    <td class="testCasetest_document_repairpy">testCase\test_document_repair.py</td>
+                    <td>test_Single_File_Remove</td>
+                    <td>None</td>
+                    <td>16.651435</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Remove
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:151 随机移除1个文件, 请耐心等待
+INFO     root:doUITemp.py:160 移除之后剩余0个文件
+INFO     root:test_document_repair.py:27 测试单个文件移除 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>3</td>
+                    <td class="testCasetest_document_repairpy">testCase\test_document_repair.py</td>
+                    <td>test_All_Files_Remove</td>
+                    <td>None</td>
+                    <td>17.012035</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Remove
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:178 移除所有的文件
+INFO     root:doUITemp.py:183 移除之后剩余0个文件
+INFO     root:test_document_repair.py:34 测试多个文件移除 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>4</td>
+                    <td class="testCasetest_document_repairpy">testCase\test_document_repair.py</td>
+                    <td>test_File_Repair</td>
+                    <td>None</td>
+                    <td>21.037378</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Repair
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:200 修复中, 请耐心等待
+INFO     root:Collection.py:93 1个文件修复成功, 0个文件修复失败
+INFO     root:test_document_repair.py:41 测试文件修复 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>5</td>
+                    <td class="testCasetest_document_repairpy">testCase\test_document_repair.py</td>
+                    <td>test_File_High_Repair_psd</td>
+                    <td>None</td>
+                    <td>30.731572</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\HighRepair\psd
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:219 修复中, 请耐心等待
+INFO     root:Collection.py:93 0个文件修复成功, 1个文件修复失败
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\HighRepair\psd\MatchFile
+INFO     root:Collection.py:43 高级修复中, 请耐心等待
+INFO     root:Collection.py:48 成功修复1个文件
+INFO     root:test_document_repair.py:48 测试文件高级修复 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>6</td>
+                    <td class="testCasetest_document_repairpy">testCase\test_document_repair.py</td>
+                    <td>test_File_High_Repair_psb</td>
+                    <td>None</td>
+                    <td>0.000095</td>
+                    
+                    <td class="text-info">跳过</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="contact"
+                                           aria-selected="false" style="padding: 0 16px">异常信息</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    <div class="tab-pane fade " role="tabpanel" aria-labelledby="home-tab">
+                                        <pre style="line-height: 18px">('D:\\PythonFile\\tools\\4DDIG\\testCase\\test_document_repair.py', 52, 'Skipped: psb格式高级修复暂时无资源, 跳过运行')</pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>7</td>
+                    <td class="testCasetest_document_repairpy">testCase\test_document_repair.py</td>
+                    <td>test_All_File_Export</td>
+                    <td>None</td>
+                    <td>38.156813</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Export
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:268 修复中, 请耐心等待
+INFO     root:Collection.py:93 1个文件修复成功, 0个文件修复失败
+INFO     root:doUITemp.py:287 成功导出1个文件</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>8</td>
+                    <td class="testCasetest_document_repairpy">testCase\test_document_repair.py</td>
+                    <td>test_Single_File_Export</td>
+                    <td>None</td>
+                    <td>37.605281</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Export
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:302 修复中, 请耐心等待
+INFO     root:Collection.py:93 1个文件修复成功, 0个文件修复失败
+INFO     root:doUITemp.py:321 成功导出1个文件
+INFO     root:test_document_repair.py:70 测试单个文件导出 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>9</td>
+                    <td class="testCasetest_video_repairpy">testCase\test_video_repair.py</td>
+                    <td>test_File_Import</td>
+                    <td>None</td>
+                    <td>27.422386</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Import
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:test_video_repair.py:24 测试文件导入 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>10</td>
+                    <td class="testCasetest_video_repairpy">testCase\test_video_repair.py</td>
+                    <td>test_Single_File_Remove</td>
+                    <td>None</td>
+                    <td>0.012956</td>
+                    
+                    <td class="text-warning">失败</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="contact"
+                                           aria-selected="false" style="padding: 0 16px">异常信息</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    <div class="tab-pane fade " role="tabpanel" aria-labelledby="home-tab">
+                                        <pre style="line-height: 18px">self = <psutil._pswindows.Process object at 0x00000193A87A54C0>, args = ()
+kwargs = {}
+
+    @functools.wraps(fun)
+    def wrapper(self, *args, **kwargs):
+        try:
+>           return fun(self, *args, **kwargs)
+
+venv\Lib\site-packages\psutil\_pswindows.py:694: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <psutil._pswindows.Process object at 0x00000193A87A54C0>
+
+    @wrap_exceptions
+    def create_time(self):
+        # Note: proc_times() not put under oneshot() 'cause create_time()
+        # is already cached by the main Process class.
+        try:
+>           user, system, created = cext.proc_times(self.pid)
+E           ProcessLookupError: [Errno 3] assume no such process (originated from OpenProcess -> ERROR_INVALID_PARAMETER)
+
+venv\Lib\site-packages\psutil\_pswindows.py:948: ProcessLookupError
+
+During handling of the above exception, another exception occurred:
+
+self = psutil.Process(pid=17628, status='terminated'), pid = 17628
+_ignore_nsp = False
+
+    def _init(self, pid, _ignore_nsp=False):
+        if pid is None:
+            pid = os.getpid()
+        else:
+            if not _PY3 and not isinstance(pid, (int, long)):
+                raise TypeError('pid must be an integer (got %r)' % pid)
+            if pid < 0:
+                raise ValueError('pid must be a positive integer (got %s)'
+                                 % pid)
+        self._pid = pid
+        self._name = None
+        self._exe = None
+        self._create_time = None
+        self._gone = False
+        self._pid_reused = False
+        self._hash = None
+        self._lock = threading.RLock()
+        # used for caching on Windows only (on POSIX ppid may change)
+        self._ppid = None
+        # platform-specific modules define an _psplatform.Process
+        # implementation class
+        self._proc = _psplatform.Process(pid)
+        self._last_sys_cpu_times = None
+        self._last_proc_cpu_times = None
+        self._exitcode = _SENTINEL
+        # cache creation time for later use in is_running() method
+        try:
+>           self.create_time()
+
+venv\Lib\site-packages\psutil\__init__.py:361: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+venv\Lib\site-packages\psutil\__init__.py:719: in create_time
+    self._create_time = self._proc.create_time()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <psutil._pswindows.Process object at 0x00000193A87A54C0>, args = ()
+kwargs = {}
+
+    @functools.wraps(fun)
+    def wrapper(self, *args, **kwargs):
+        try:
+            return fun(self, *args, **kwargs)
+        except OSError as err:
+>           raise convert_oserror(err, pid=self.pid, name=self._name)
+E           psutil.NoSuchProcess: process no longer exists (pid=17628)
+
+venv\Lib\site-packages\psutil\_pswindows.py:696: NoSuchProcess
+
+During handling of the above exception, another exception occurred:
+
+    def test_Single_File_Remove():
+        actualValue, expectValue, title = DoUITemp("Fix Video Errors", "test_Single_File_Remove",
+>                                                  "VideoRepairCase.json", openApp()).doUiTemp()
+
+testCase\test_video_repair.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\AppStart.py:17: in openApp
+    if psutil.Process(pid).name() == config["App"]["ProcessName"]:
+venv\Lib\site-packages\psutil\__init__.py:332: in __init__
+    self._init(pid)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = psutil.Process(pid=17628, status='terminated'), pid = 17628
+_ignore_nsp = False
+
+    def _init(self, pid, _ignore_nsp=False):
+        if pid is None:
+            pid = os.getpid()
+        else:
+            if not _PY3 and not isinstance(pid, (int, long)):
+                raise TypeError('pid must be an integer (got %r)' % pid)
+            if pid < 0:
+                raise ValueError('pid must be a positive integer (got %s)'
+                                 % pid)
+        self._pid = pid
+        self._name = None
+        self._exe = None
+        self._create_time = None
+        self._gone = False
+        self._pid_reused = False
+        self._hash = None
+        self._lock = threading.RLock()
+        # used for caching on Windows only (on POSIX ppid may change)
+        self._ppid = None
+        # platform-specific modules define an _psplatform.Process
+        # implementation class
+        self._proc = _psplatform.Process(pid)
+        self._last_sys_cpu_times = None
+        self._last_proc_cpu_times = None
+        self._exitcode = _SENTINEL
+        # cache creation time for later use in is_running() method
+        try:
+            self.create_time()
+        except AccessDenied:
+            # We should never get here as AFAIK we're able to get
+            # process creation time on all platforms even as a
+            # limited user.
+            pass
+        except ZombieProcess:
+            # Zombies can still be queried by this class (although
+            # not always) and pids() return them so just go on.
+            pass
+        except NoSuchProcess:
+            if not _ignore_nsp:
+>               raise NoSuchProcess(pid, msg='process PID not found')
+E               psutil.NoSuchProcess: process PID not found (pid=17628)
+
+venv\Lib\site-packages\psutil\__init__.py:373: NoSuchProcess</pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>11</td>
+                    <td class="testCasetest_video_repairpy">testCase\test_video_repair.py</td>
+                    <td>test_All_Files_Remove</td>
+                    <td>None</td>
+                    <td>28.953080</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Remove
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:178 移除所有的文件
+INFO     root:doUITemp.py:183 移除之后剩余0个文件
+INFO     root:test_video_repair.py:39 测试多个文件移除 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>12</td>
+                    <td class="testCasetest_video_repairpy">testCase\test_video_repair.py</td>
+                    <td>test_File_Repair</td>
+                    <td>None</td>
+                    <td>42.008596</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Repair
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入48个文件
+INFO     root:doUITemp.py:200 修复中, 请耐心等待
+INFO     root:Collection.py:93 48个文件修复成功, 0个文件修复失败
+INFO     root:test_video_repair.py:46 测试文件修复 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>13</td>
+                    <td class="testCasetest_video_repairpy">testCase\test_video_repair.py</td>
+                    <td>test_File_High_Repair</td>
+                    <td>None</td>
+                    <td>56.691300</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\HighRepair\wmv
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入2个文件
+INFO     root:doUITemp.py:219 修复中, 请耐心等待
+INFO     root:Collection.py:93 0个文件修复成功, 2个文件修复失败
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\HighRepair\wmv\MatchFile
+INFO     root:Collection.py:43 高级修复中, 请耐心等待
+INFO     root:Collection.py:48 成功修复1个文件
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\HighRepair\wmv\MatchFile
+INFO     root:Collection.py:43 高级修复中, 请耐心等待
+INFO     root:Collection.py:48 成功修复2个文件
+INFO     root:test_video_repair.py:53 测试文件高级修复 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>14</td>
+                    <td class="testCasetest_video_repairpy">testCase\test_video_repair.py</td>
+                    <td>test_File_Preview</td>
+                    <td>None</td>
+                    <td>40.249064</td>
+                    
+                    <td class="text-warning">失败</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="contact"
+                                           aria-selected="false" style="padding: 0 16px">异常信息</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\repair
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:240 修复中, 请耐心等待
+INFO     root:Collection.py:93 1个文件修复成功, 0个文件修复失败
+INFO     root:doUITemp.py:248 正在播放</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    <div class="tab-pane fade " role="tabpanel" aria-labelledby="home-tab">
+                                        <pre style="line-height: 18px">self = <pywinauto.application.WindowSpecification object at 0x00000193A8B09C90>
+criteria = [{'app': <pywinauto.application.Application object at 0x00000193A8BCD490>, 'backend': 'uia', 'best_match': '4DDiG File Repair', 'enabled_only': False, ...}, {'control_type': 'Text', 'title_re': '00:00:03', 'top_level_only': False}]
+timeout = 5.0, retry_interval = 0.09
+
+    def __resolve_control(self, criteria, timeout=None, retry_interval=None):
+        """
+        Find a control using criteria
+    
+        * **criteria** - a list that contains 1 or 2 dictionaries
+    
+             1st element is search criteria for the dialog
+    
+             2nd element is search criteria for a control of the dialog
+    
+        * **timeout** -  maximum length of time to try to find the controls (default 5)
+        * **retry_interval** - how long to wait between each retry (default .2)
+        """
+        if timeout is None:
+            timeout = Timings.window_find_timeout
+        if retry_interval is None:
+            retry_interval = Timings.window_find_retry
+    
+        try:
+>           ctrl = wait_until_passes(
+                timeout,
+                retry_interval,
+                self.__get_ctrl,
+                (findwindows.ElementNotFoundError,
+                 findbestmatch.MatchError,
+                 controls.InvalidWindowHandle,
+                 controls.InvalidElement),
+                criteria)
+
+venv\Lib\site-packages\pywinauto\application.py:250: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+timeout = 5.0, retry_interval = 0.09
+func = <bound method WindowSpecification.__get_ctrl of <pywinauto.application.WindowSpecification object at 0x00000193A8B09C90>>
+exceptions = (<class 'pywinauto.findwindows.ElementNotFoundError'>, <class 'pywinauto.findbestmatch.MatchError'>, <class 'pywinauto.controls.hwndwrapper.InvalidWindowHandle'>, <class 'pywinauto.base_wrapper.InvalidElement'>)
+args = ([{'app': <pywinauto.application.Application object at 0x00000193A8BCD490>, 'backend': 'uia', 'best_match': '4DDiG File Repair', 'enabled_only': False, ...}, {'control_type': 'Text', 'title_re': '00:00:03', 'top_level_only': False}],)
+kwargs = {}, start = 250523.2666603, time_left = -0.013894200004870072
+err = TimeoutError()
+
+    def wait_until_passes(timeout,
+                          retry_interval,
+                          func,
+                          exceptions=(Exception),
+                          *args, **kwargs):
+        """
+        Wait until ``func(*args, **kwargs)`` does not raise one of the exceptions
+    
+        * **timeout**  how long the function will try the function
+        * **retry_interval**  how long to wait between retries
+        * **func** the function that will be executed
+        * **exceptions**  list of exceptions to test against (default: Exception)
+        * **args** optional arguments to be passed to func when called
+        * **kwargs** optional keyword arguments to be passed to func when called
+    
+        Returns the return value of the function
+        If the operation times out then the original exception raised is in
+        the 'original_exception' attribute of the raised exception.
+    
+        e.g. ::
+    
+            try:
+                # wait a maximum of 10.5 seconds for the
+                # window to be found in increments of .5 of a second.
+                # P.int a message and re-raise the original exception if never found.
+                wait_until_passes(10.5, .5, self.Exists, (ElementNotFoundError))
+            except TimeoutError as e:
+                print("timed out")
+                raise e.
+        """
+        start = timestamp()
+    
+        # keep trying until the timeout is passed
+        while True:
+            try:
+                # Call the function with any arguments
+                func_val = func(*args, **kwargs)
+    
+                # if no exception is raised then we are finished
+                break
+    
+            # An exception was raised - so wait and try again
+            except exceptions as e:
+    
+                # find out how much of the time is left
+                time_left = timeout - (timestamp() - start)
+    
+                # if we have to wait some more
+                if time_left > 0:
+                    # wait either the retry_interval or else the amount of
+                    # time until the timeout expires (whichever is less)
+                    time.sleep(min(retry_interval, time_left))
+    
+                else:
+                    # Raise a TimeoutError - and put the original exception
+                    # inside it
+                    err = TimeoutError()
+                    err.original_exception = e
+>                   raise err
+E                   pywinauto.timings.TimeoutError
+
+venv\Lib\site-packages\pywinauto\timings.py:458: TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+    def test_File_Preview():
+        actualValue, expectValue, title = DoUITemp("Fix Video Errors", "test_File_Preview",
+>                                                  "VideoRepairCase.json", openApp()).doUiTemp()
+
+testCase\test_video_repair.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+testCase\doUITemp.py:86: in doUiTemp
+    flag = self.filePreview()
+testCase\doUITemp.py:253: in filePreview
+    if BasePage(self.app).get_control_title("window_re", "00:00:03") == "00:00:03":
+Page\BasePage.py:34: in get_control_title
+    return self.app.child_window(title_re=attr, control_type="Text").window_text()
+venv\Lib\site-packages\pywinauto\application.py:379: in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+venv\Lib\site-packages\pywinauto\application.py:261: in __resolve_control
+    raise e.original_exception
+venv\Lib\site-packages\pywinauto\timings.py:436: in wait_until_passes
+    func_val = func(*args, **kwargs)
+venv\Lib\site-packages\pywinauto\application.py:222: in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+kwargs = {'backend': 'uia', 'control_type': 'Text', 'parent': <uia_element_info.UIAElementInfo - '4DDiG File Repair', Window, 10553342>, 'title_re': '00:00:03', ...}
+elements = []
+
+    def find_element(**kwargs):
+        """
+        Call find_elements and ensure that only one element is returned
+    
+        Calls find_elements with exactly the same arguments as it is called with
+        so please see :py:func:`find_elements` for the full parameters description.
+        """
+        elements = find_elements(**kwargs)
+    
+        if not elements:
+>           raise ElementNotFoundError(kwargs)
+E           pywinauto.findwindows.ElementNotFoundError: {'title_re': '00:00:03', 'control_type': 'Text', 'top_level_only': False, 'parent': <uia_element_info.UIAElementInfo - '4DDiG File Repair', Window, 10553342>, 'backend': 'uia'}
+
+venv\Lib\site-packages\pywinauto\findwindows.py:87: ElementNotFoundError</pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>15</td>
+                    <td class="testCasetest_video_repairpy">testCase\test_video_repair.py</td>
+                    <td>test_All_File_Export</td>
+                    <td>None</td>
+                    <td>49.933877</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Export
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:268 修复中, 请耐心等待
+INFO     root:Collection.py:93 1个文件修复成功, 0个文件修复失败
+INFO     root:doUITemp.py:287 成功导出1个文件
+INFO     root:test_video_repair.py:67 测试所有文件导出 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr class="case_">
+                    <td>16</td>
+                    <td class="testCasetest_video_repairpy">testCase\test_video_repair.py</td>
+                    <td>test_Single_File_Export</td>
+                    <td>None</td>
+                    <td>49.468561</td>
+                    
+                    
+                    <td class="text-success">通过</td>
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn_info btn-primary btn-sm">查看详情</button>
+                    </td>
+                </tr>
+
+                <tr class="test_log">
+                    <td colspan="7" class="small text-muted" style=" word-wrap:break-word; word-break:break-all;padding: 0">
+                        <div class="card" style="background: rgba(3, 14, 70, 0.5)">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-toggle="tab" role="tab" aria-controls="home"
+                                           aria-selected="true" style="padding: 0 16px">运行日志</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile"
+                                           aria-selected="false" style="padding: 0 16px">调试输出</a>
+                                    </li>
+                                    
+                                    
+
+                                </ul>
+                                <div class="tab-content" style="height: 300px;overflow-y: auto;padding: 20px">
+
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="profile-tab">
+                                        <pre style="line-height: 18px">INFO     root:doUITemp.py:109 打开本地文件导入弹窗
+INFO     root:LocalPopup.py:28 文件导入路径: D:\Users\Pictures\Export
+INFO     root:doUITemp.py:113 文件导入中, 请耐心等待
+INFO     root:doUITemp.py:131 文件导入完成, 已成功导入1个文件
+INFO     root:doUITemp.py:302 修复中, 请耐心等待
+INFO     root:Collection.py:93 1个文件修复成功, 0个文件修复失败
+INFO     root:doUITemp.py:321 成功导出1个文件
+INFO     root:test_video_repair.py:74 测试单个文件导出 Pass</pre>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contact-tab">
+                                        <pre style="line-height: 18px"></pre>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+
+        <div style="height: 200px"></div>
+    </div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    const resulte = {
+            "success": `13`,
+            "all": `16`,
+            "fail": `2`,
+            "skip": '1',
+            "error": `0`,
+            "runtime": '508.073853 S',
+            "begin_time": "1694434431.848311",
+            "pass_rate": '81.25',
+        }
+    ;
+    const history = [{'success': 13, 'all': 16, 'fail': 2, 'skip': 1, 'error': 0, 'runtime': '508.073853 S', 'begin_time': '2023-09-11 20:13:51', 'pass_rate': '81.25'}];
+
+    var passRate = [];
+    var dTime = [];
+    history.forEach(function (item, index, array) {
+        passRate.push(item.pass_rate);
+        dTime.push(item.begin_time)
+    });
+    if (passRate.length === 1) {
+        passRate.unshift(0);
+        dTime.unshift(0)
+    }
+
+    function char01() {
+        let myChart = echarts.init(document.getElementById('char1'));
+        let option = {
+            color: ['#28a745', '#ffc107', '#dc3545', '#17a2b8'],
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b}: {c} ({d}%)',
+                backgroundColor: 'rgba(3, 14, 70, 0.5)',
+                borderColor: '#333',
+                textStyle: {
+                    color: '#fff',
+                    fontSize: "13"
+                },
+            },
+            legend: {
+                bottom: "0%",
+                // 小图标的宽度和高度
+                itemWidth: 10,
+                itemHeight: 10,
+                data: ['通过', '失败', '错误', '跳过'],
+                textStyle: {
+                    color: "rgba(255,255,255,.5)",
+                    fontSize: "12"
+                },
+            },
+            series: [
+                {
+                    name: '测试结果',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '20',
+                            fontWeight: 'bold',
+                            color: '#fff',
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        {value: resulte.success, name: '通过'},
+                        {value: resulte.fail, name: '失败'},
+                        {value: resulte.error, name: '错误'},
+                        {value: resulte.skip, name: '跳过'}
+                    ]
+                }
+            ]
+        };
+        myChart.setOption(option)
+
+    }
+
+    char01();
+
+    //    大图
+    function char02() {
+
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = echarts.init(document.getElementById("char2"));
+        // 2. 指定配置和数据
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                formatter: '{a} <br/>{b}:  ({c}%)',
+                backgroundColor: 'rgba(3, 14, 70, 0.5)',
+                borderColor: '#333',
+                textStyle: {
+                    color: '#fff',
+                    fontSize: "13"
+                },
+            },
+
+            grid: {
+                left: "10",
+                top: "30",
+                right: "10",
+                bottom: "0",
+                containLabel: true
+            },
+
+            xAxis: [{
+                type: "category",
+                boundaryGap: false,
+                show: false,
+                axisLabel: {
+                    textStyle: {
+                        color: "rgba(255,255,255,.6)",
+                        fontSize: 12
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: "rgba(255,255,255,.2)"
+                    }
+                },
+
+                data: dTime
+            },
+                {
+                    axisPointer: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
+                    position: "bottom",
+                    offset: 20
+                }
+            ],
+
+            yAxis: [{
+                type: "value",
+                axisTick: {
+                    show: false
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: "rgba(255,255,255,.1)"
+                    }
+                },
+                axisLabel: {
+                    textStyle: {
+                        color: "rgba(255,255,255,.6)",
+                        fontSize: 12
+                    }
+                },
+
+                splitLine: {
+                    lineStyle: {
+                        color: "rgba(255,255,255,.1)"
+                    }
+                }
+            }],
+            series: [{
+                name: "通过率",
+                type: "line",
+                smooth: true,
+                symbol: "circle",
+                symbolSize: 5,
+                showSymbol: true,
+                lineStyle: {
+                    normal: {
+                        color: "#0184d5",
+                        width: 2
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0,
+                            0,
+                            0,
+                            1,
+                            [{
+                                offset: 0,
+                                color: "rgba(1, 132, 213, 0.4)"
+                            },
+                                {
+                                    offset: 0.8,
+                                    color: "rgba(1, 132, 213, 0.1)"
+                                }
+                            ],
+                            false
+                        ),
+                        shadowColor: "rgba(0, 0, 0, 0.1)"
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: "#0184d5",
+                        borderColor: "rgba(221, 220, 107, .1)",
+                        borderWidth: 18
+                    }
+                },
+                data: passRate
+            },
+            ]
+        };
+        // 重新把配置好的新数据给实例对象
+        myChart.setOption(option);
+
+    }
+
+    char02();
+
+    function char03() {
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = echarts.init(document.getElementById("char3"));
+        var data = [resulte.success, resulte.fail, resulte.error, resulte.skip];
+        var titlename = ["通过用例", "失败用例", "错误用例", "跳过用例",];
+        var valdata = [resulte.all, resulte.all, resulte.all, resulte.all];
+        var myColor = ['#28a745', '#ffc107', '#dc3545', '#17a2b8'];
+        option = {
+            //图标位置
+            grid: {
+                top: "10%",
+                left: "22%",
+                bottom: "10%"
+            },
+            xAxis: {
+                show: false
+            },
+            yAxis: [{
+                show: true,
+                data: titlename,
+                inverse: true,
+                axisLine: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: "#fff",
+
+                    rich: {
+                        lg: {
+                            backgroundColor: "#339911",
+                            color: "#fff",
+                            borderRadius: 15,
+                            align: "center",
+                            width: 15,
+                            height: 15
+                        }
+                    }
+                }
+            },
+                {
+                    show: false,
+                    inverse: true,
+                    data: valdata,
+                    axisLabel: {
+                        textStyle: {
+                            fontSize: 12,
+                            color: "#fff"
+                        }
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
+                }
+            ],
+            series: [{
+                type: "bar",
+                yAxisIndex: 0,
+                data: data,
+                barCategoryGap: 50,
+                barWidth: 18,
+                itemStyle: {
+                    normal: {
+                        barBorderRadius: 20,
+                        color: function (params) {
+                            var num = myColor.length;
+                            return myColor[params.dataIndex % num];
+                        }
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: "right",
+                        formatter: "{c}条",
+                        color: "#fff",
+
+                    }
+                }
+            },
+                {
+                    type: "bar",
+                    yAxisIndex: 1,
+                    barCategoryGap: 50,
+                    data: valdata,
+                    barWidth: 20,
+                    itemStyle: {
+                        normal: {
+                            color: "none",
+                            borderColor: "#00c1de",
+                            borderWidth: 2,
+                            barBorderRadius: 15
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        });
+    }
+
+    char03()
+
+</script>
+
+
+<script>
+    var tbodyTr = $('tbody .case_');
+    var testResult = $("#testResult");
+    var testClass = $("#testClass");
+    <!--    用例执行详细信息显示切换-->
+    $(".btn_info").click(function () {
+        $(this).parent().parent().next().toggle();
+
+    });
+    // 当选择用例类之后触发
+    testClass.change(function () {
+        $('.test_log').hide();
+        var cls = $(this).val();
+        var res = testResult.val();
+        elementDisplay(cls, res);
+        sort()
+    });
+    testResult.change(function () {
+        var res = $(this).val();
+        var cls = testClass.val();
+        elementDisplay(cls, res);
+        sort()
+    });
+
+    function elementDisplay(cls, res) {
+        // 用例数据的显示
+        if (cls === "所有") {
+            if (res === "所有") {
+                tbodyTr.has('button').show();
+            } else if (res === '成功') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-success').show()
+
+            } else if (res === '错误') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-danger').show()
+
+            } else if (res === '失败') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-warning').show()
+
+            } else if (res === '跳过') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.text-info').show()
+            }
+        } else {
+            if (res === "所有") {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').show()
+            } else if (res === '成功') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-success').show()
+            } else if (res === '错误') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-danger').show()
+            } else if (res === '失败') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-warning').show()
+            } else if (res === '跳过') {
+                tbodyTr.hide();
+                tbodyTr.has('button').has('.' + cls + '').has('.text-info').show()
+            }
+        }
+    }
+
+    function sort() {
+        //重新排列显示序号
+        // 选择所有可以见的tr
+        var visibleTr = tbodyTr.filter(":visible");
+
+        visibleTr.each(function (index, element) {
+            element.firstElementChild.innerHTML = index + 1;
+
+        })
+
+    }
+
+    $('.nav-tabs li').click(function () {
+        $(this).find('a').addClass('active');
+        $(this).siblings().find('a').removeClass('active');
+        $(this).parent().next().children('.tab-content div').eq($(this).index()).addClass('active show').siblings().removeClass('active show')
+    });
+
+</script>
+
+
+</body>
+</html>

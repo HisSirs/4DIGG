@@ -68,6 +68,10 @@ def run():
     zipfile_(input_file=REPORT_DIR, output_file=os.path.join(REPORT_DIR, fname))
     
     file = os.path.join(REPORT_DIR, fname)
-    
+
+    # 发送消息和测试报告
     send_msg(webhook, msg, headers)
     send_file(webhook, file, headers)
+
+    # 删除测试报告ZIP文件
+    os.remove(os.path.join(REPORT_DIR, fname))

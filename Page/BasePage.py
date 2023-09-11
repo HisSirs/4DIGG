@@ -30,8 +30,6 @@ class BasePage(object):
                 return self.app[attr].window_text()
             case "ClassName":
                 return self.app[attr].window_text()
-            # case "Button":
-            #     return self.app.child_window(title=attr, control_type="Button").window_text()
             case "window_re":
                 return self.app.child_window(title_re=attr, control_type="Text").window_text()
     
