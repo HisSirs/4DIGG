@@ -41,34 +41,41 @@ def exportPopup(app, filePath):
     if os.path.exists(filePath):
         shutil.rmtree(filePath)
 
-    os.mkdir(filePath)
-    path = filePath.split("\\")
-
-    # 快速访问的路径存在中文, 需要用英文替换
-    Documents = "文档"
-    Pictures = "图片"
-    Downloads = "下载"
-    Videos = "视频"
-    Music = "音乐"
-
-    app.child_window(title="此电脑", control_type="TreeItem").click_input()
     try:
-        app.child_window(title_re=f"(.*)({path[0]})", control_type="TreeItem").click_input()
-        for i in range(1, len(path)):
-            if path[i] == "Documents":
-                path[i] = "文档"
-            elif path[i] == "Pictures":
-                path[i] = "图片"
-            elif path[i] == "Downloads":
-                path[i] = "下载"
-            elif path[i] == "Videos":
-                path[i] = "视频"
-            elif path[i] == "Music":
-                path[i] = "音乐"
-            app.child_window(title=f"{path[i]}", control_type="TreeItem").click_input()
-            sleep(1)
-    except:
-        for _ in range(5):
-            pyautogui.press("down")
+        # 路径不能创建时, 直接失败
+        os.mkdir(filePath)
+        path = filePath.split("\\")
 
-    app["确定"].click_input()
+        app.child_window(title="此电脑", control_type="TreeItem").click_input()
+        while True:
+
+            app.child_window(title_re=f"(.*)({path[0]})", control_type="TreeItem").click_input()
+            for i in range(1, len(path)):
+                match path[i]:
+                    case "Documents":
+                        path[i] = "文档"
+                    case "Pictures":
+                        path[i] = "图片"
+                    case "Downloads":
+                        path[i] = "下载"
+                    case "Videos":
+                        path[i] = "视频"
+                    case "Music":
+                        path[i] = "音乐"
+                try:
+                    app.child_window(title=f"{path[i]}", control_type="TreeItem").click_input()
+                    sleep(2)
+
+                except:
+                    for _ in range(5):
+                        pyautogui.press("down")
+            break
+
+        app["确定"].click_input()
+
+        return True
+
+    except FileNotFoundError as e:
+        logger().error(e)
+
+        return False

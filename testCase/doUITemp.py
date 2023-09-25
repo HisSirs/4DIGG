@@ -258,18 +258,19 @@ class DoUITemp:
         time.sleep(0.5)
         BasePage(self.app).control_click("Name", "Export Selected")
 
-        # 根据导出路径选择文件夹
-        exportPopup(self.app, self.exportFilePath)
+        # 根据导出路径选择文件夹, 路径不能创建成功则直接失败
+        if exportPopup(self.app, self.exportFilePath):
+            # 等待导出完成
+            result = waitExportComplete(self.app)
 
-        # 等待导出完成
-        result = waitExportComplete(self.app)
+            # 获取导出路径下的文件数
+            for root, dirs, file in os.walk(self.exportFilePath):
+                if len(file) == importNumber and importNumber == result:
+                    logger().info(f"成功导出{len(file)}个文件")
 
-        # 获取导出路径下的文件数
-        for root, dirs, file in os.walk(self.exportFilePath):
-            if len(file) == importNumber and importNumber == result:
-                logger().info(f"成功导出{len(file)}个文件")
-
-                return True
+                    return True
+                return False
+        else:
             return False
 
     # 单个文件导出
@@ -293,15 +294,16 @@ class DoUITemp:
             BasePage(self.app).control_click("Name", "Export")
 
         # 根据导出路径选择文件夹
-        exportPopup(self.app, self.exportFilePath)
+        if exportPopup(self.app, self.exportFilePath):
+            # 等待导出完成
+            result = waitExportComplete(self.app)
 
-        # 等待导出完成
-        result = waitExportComplete(self.app)
+            # 获取导出路径下的文件数
+            for root, dirs, file in os.walk(self.exportFilePath):
+                if len(file) == 1 and result == 1:
+                    logger().info(f"成功导出{len(file)}个文件")
 
-        # 获取导出路径下的文件数
-        for root, dirs, file in os.walk(self.exportFilePath):
-            if len(file) == 1 and result == 1:
-                logger().info(f"成功导出{len(file)}个文件")
-
-                return True
+                    return True
+                return False
+        else:
             return False

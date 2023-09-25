@@ -109,10 +109,12 @@ def waitHighRepairComplete(app):
 
 # 等待导出完成
 def waitExportComplete(app):
-    path = os.path.join(IMG_DIR, "Complete.png")
+    # path = os.path.join(IMG_DIR, "Complete.png")
     while True:
-        if pyautogui.locateOnScreen(path):
+        if app["Export Complete"].exists():
             break
+        # if pyautogui.locateCenterOnScreen(path):
+        #     break
     try:
         text = BasePage(app).get_control_title("window_re", "(.*) files exported! You can check them in File Manager.")
         result = int(text.split(" ")[0])

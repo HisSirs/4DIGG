@@ -16,7 +16,9 @@ def openApp(isClose=False):
     # 检查进程是否存在
     for pid in psutil.pids():
         if psutil.Process(pid).name() == config["App"]["ProcessName"]:
-            os.system(f"taskill /f /pid {pid}")
+            os.system(f"taskkill /f /pid {pid}")
+        else:
+            pass
 
     if not isClose:
         Application("uia").start(config["App"]["AppPath"])
@@ -31,3 +33,6 @@ def openApp(isClose=False):
 
         return app
 
+
+if __name__ == '__main__':
+    openApp(True)
